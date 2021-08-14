@@ -1,0 +1,191 @@
+<div>
+    <div class="preguntas">
+        <div class="pregunta-i">
+            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+            <mat-radio-group
+                class="elements"
+                aria-labelledby="example-radio-group-label"
+                [(ngModel)]="respuestaSeleccionadaFrutas">
+
+                <div class="options">
+                    <img src="../../../assets/frutas-4.jpg" > <br>
+                    <mat-radio-button value="4" ></mat-radio-button>
+                </div>
+
+                <div class="options">
+                    <img src="../../../assets/frutas-5.jpg" > <br>
+                    <mat-radio-button value="5"></mat-radio-button>
+                </div>
+           
+                <div class="options">
+                    <img src="../../../assets/frutas-9.jpg" > <br>
+                    <mat-radio-button value="9"></mat-radio-button>
+                </div>
+
+            </mat-radio-group>
+            <div>La respuesta es: {{respuestaSeleccionadaFrutas}}</div>
+        </div>
+    </div>
+
+    <div class="preguntas">
+        <div class="pregunta-i">
+           <mat-radio-group
+                class="elements"
+               aria-labelledby="example-radio-group-label"
+               [(ngModel)]="respuestaSeleccionadaArboles">
+
+               <div class="options">
+                    <img src="../../../assets/arboles-4.jpg" > <br>
+                    <mat-radio-button value="4" ></mat-radio-button>
+               </div>
+
+               <div class="options">
+                    <img src="../../../assets/arboles-6.png" > <br>
+                    <mat-radio-button value="6"></mat-radio-button>
+               </div>
+          
+               <div class="options">
+                    <img src="../../../assets/arboles-9.png" > <br>
+                    <mat-radio-button value="9"></mat-radio-button>
+               </div>
+
+           </mat-radio-group>
+           <div>La respuesta es: {{respuestaSeleccionadaArboles}}</div>
+       </div>
+    </div>
+
+    <div class="preguntas">
+        <div class="pregunta-i">
+            <label class="titulo">Contar con un limite inferior a: </label> 
+            <div>
+                <h3>Cuenta a partir de 3 </h3> 
+
+                <span>Cuenta hacia delante desde el 3 </span> <br>
+                <input class="numeros" type="number" id="5" value="3" disabled> , 
+                <input class="numeros" type="number"  id="6" [(ngModel)]="contar_3_1"> , 
+                <input class="numeros" type="number"  id="7" [(ngModel)]="contar_3_2"> ,
+                <input class="numeros" type="number"  id="8" [(ngModel)]="contar_3_3"> , 
+                <input class="numeros" type="number"  id="9" [(ngModel)]="contar_3_4">
+
+                <br><br><br>
+                <label>Respuestas que se recibiran para chequear si es correcto o no: {{ contar_3_1}}, {{ contar_3_2}}, {{ contar_3_3}}, {{ contar_3_4}} </label>
+                
+
+            </div> <br>
+            <div>
+                <h3>Cuenta a partir de 7 </h3> 
+
+                <span>Cuenta hacia delante desde el 7 </span> <br>
+                <input class="numeros" type="number" id="10" value="7" disabled> ,  
+                <input class="numeros" type="number"  id="11" [(ngModel)]="contar_7_1"> , 
+                <input class="numeros" type="number"  id="12" [(ngModel)]="contar_7_2"> ,
+                <input class="numeros" type="number"  id="13" [(ngModel)]="contar_7_3"> , 
+                <input class="numeros" type="number"  id="14" [(ngModel)]="contar_7_4">
+
+                <br><br><br>
+                <label>Respuestas que se recibiran para chequear si es correcto o no: {{ contar_7_1}}, {{ contar_7_2}}, {{ contar_7_3}}, {{ contar_7_4}} </label>
+            </div> <br>
+
+            <label class="titulo">Contar con un limite inferior y superior: </label> 
+            <div>
+                <h3>Cuenta a partir de 5 hasta 9 </h3> 
+
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_5_1"> , 
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_5_2"> ,
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_5_3"> , 
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_5_4"> ,
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_5_5">
+
+                <br><br><br>
+                <label>Respuestas que se recibiran para chequear si es correcto o no:  </label>
+                
+
+            </div> <br>
+            <div>
+                <h3>Cuenta a partir de 5 hasta 9</h3> 
+
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_4_1"> , 
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_4_2"> ,
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_4_3"> , 
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_4_4"> ,
+                <input class="numeros" type="number" [(ngModel)]="contarLimInfSup_4_5">
+
+                <br><br><br>
+                <label>Respuestas que se recibiran para chequear si es correcto o no: {{ contar_7_1}}, {{ contar_7_2}}, {{ contar_7_3}}, {{ contar_7_4}} </label>
+            </div> <br>
+
+            <label class="titulo">Cuenta hacia atras: </label> <br><br>
+            <div>
+                <h3>Cuenta hacia atras desde 7 </h3> 
+
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_7_1"> , 
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_7_2"> ,
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_7_3"> , 
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_7_4"> ,
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_7_5">
+
+                <br><br><br>                
+
+            </div> <br>
+            <div>
+                <h3>Cuenta hacia atras desde 15</h3> 
+
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_15_1"> , 
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_15_2"> ,
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_15_3"> , 
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_15_4"> ,
+                <input class="numeros" type="number" [(ngModel)]="contarAtras_15_5">
+
+                <br><br><br>
+            </div> <br>
+   
+        </div>
+    </div>
+    <div class="preguntas">
+
+        <div class="pregunta-i elementosNumerar">
+
+            <div >
+                <label>Escribe cuantos elementos ves</label> <br><br>
+                <img src="../../../assets/arboles-9.png" alt=""><br><br>
+                <input class="numeros" type="number">
+            </div> <br><br>
+            <div >
+                <label>Escribe cuantos elementos ves</label> <br><br>
+
+                <img src="../../../assets/arboles-4.jpg" alt=""><br><br>
+                <input class="numeros" type="number">
+            </div> <br><br>
+            <div >
+                <label>Escribe cuantos elementos ves</label> <br><br>
+
+                <img src="../../../assets/arboles-6.png" alt=""><br><br>
+                <input class="numeros" type="number">
+            </div> <br><br>
+            <div >
+                <label>Escribe cuantos elementos ves</label> <br><br>
+
+                <img src="../../../assets/frutas-9.jpg" alt=""><br><br>
+                <input class="numeros" type="number">
+            </div> <br><br>
+            <div >
+                <label>Escribe cuantos elementos ves</label> <br><br>
+
+                <img src="../../../assets/frutas-4.jpg" alt=""><br><br>
+                <input class="numeros" type="number">
+            </div> <br><br>
+            <div >
+                <label>Escribe cuantos elementos ves</label> <br><br>
+
+                <img src="../../../assets/frutas-5.jpg" alt=""><br><br>
+                <input class="numeros" type="number">
+            </div> <br>
+
+
+        </div>
+
+
+    </div>
+    <br>
+
+</div>
