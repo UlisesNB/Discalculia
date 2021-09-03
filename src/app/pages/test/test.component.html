@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <div class="preguntas">
         <div class="pregunta-i">
             <label class="titulo" >Seleccione la imagen con mas elementos</label>
@@ -188,4 +188,1398 @@
     </div>
     <br>
 
-</div>
+</div> -->
+
+<!-- <div>
+
+    <mat-horizontal-stepper>
+        <mat-step label="label1">
+            
+        </mat-step>
+        <mat-step label="label2">
+            
+        </mat-step>
+    </mat-horizontal-stepper>
+
+</div> -->
+
+<mat-horizontal-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel></ng-template>
+        <div class="preguntas">
+            <div class="pregunta-i">
+                <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                <mat-radio-group
+                    class="elements"
+                    aria-labelledby="example-radio-group-label"
+                    formControlName="respuestaSeleccionadaFrutas">
+    
+                    <div class="options">
+                        <img src="../../../assets/frutas-4.jpg" > <br>
+                        <mat-radio-button value="4" ></mat-radio-button>
+                    </div>
+    
+                    <div class="options">
+                        <img src="../../../assets/frutas-5.jpg" > <br>
+                        <mat-radio-button value="5"></mat-radio-button>
+                    </div>
+               
+                    <div class="options">
+                        <img src="../../../assets/frutas-9.jpg" > <br>
+                        <mat-radio-button value="9"></mat-radio-button>
+                    </div>
+    
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="boton-next">
+            <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <!-- <div class="pregunta-i">
+                  <label class="titulo" >Ordene los elementos de mayor a menor</label>
+
+                  <cdk-drop (dropped)="onDrop($event)" class="list-sorted">
+                    <div *ngFor="let item of items" cdkDrag class="list-sorted__item">
+                      {{item}}
+                    </div>
+                  </cdk-drop>
+   
+              </div> -->
+
+              <!-- 4 Task trackers are there named "Todo", "In Progress", "D-Done", and "QA-Pass" -->
+
+                <!-- <div class="board">
+                    <div class="card-list mat-elevation-z1" *ngFor="let track of tracks; let i=index">
+                
+                    <h2 cdkDragHandle class="mat-h2">{{track.title}}</h2>
+                
+                    <div class="card-list-content" cdkDropList [id]="track.id" [cdkDropListData]="track.tasks" [cdkDropListConnectedTo]="trackIds"
+                        (cdkDropListDropped)="onTaskDrop($event)" [ngStyle]="{'background-color': trackColor[i]}">
+                
+                        <mat-card style="margin: 2%;" *ngFor="let task of track.tasks" cdkDrag>
+                        <mat-card-content>
+                            <h2>{{task.title}}</h2>
+                            {{task.description}}
+                        </mat-card-content>
+                        </mat-card>
+                    </div>
+                
+                    </div>
+                </div> -->
+
+          </div>
+          <div class="boton-next">
+            <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
+
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+            <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
+
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <div class="preguntas">
+              <div class="pregunta-i">
+                  <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                  <mat-radio-group
+                      class="elements"
+                      aria-labelledby="example-radio-group-label"
+                      formControlName="respuestaSeleccionadaFrutas">
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-4.jpg" > <br>
+                          <mat-radio-button value="4" ></mat-radio-button>
+                      </div>
+      
+                      <div class="options">
+                          <img src="../../../assets/frutas-5.jpg" > <br>
+                          <mat-radio-button value="5"></mat-radio-button>
+                      </div>
+                 
+                      <div class="options">
+                          <img src="../../../assets/frutas-9.jpg" > <br>
+                          <mat-radio-button value="9"></mat-radio-button>
+                      </div>
+      
+                  </mat-radio-group>
+              </div>
+          </div>
+          <div class="boton-next">
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                    <mat-radio-group
+                        class="elements"
+                        aria-labelledby="example-radio-group-label"
+                        formControlName="respuestaSeleccionadaFrutas">
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-4.jpg" > <br>
+                            <mat-radio-button value="4" ></mat-radio-button>
+                        </div>
+        
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg" > <br>
+                            <mat-radio-button value="5"></mat-radio-button>
+                        </div>
+                   
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg" > <br>
+                            <mat-radio-button value="9"></mat-radio-button>
+                        </div>
+        
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel></ng-template>
+              <div class="preguntas">
+                  <div class="pregunta-i">
+                      <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                      <mat-radio-group
+                          class="elements"
+                          aria-labelledby="example-radio-group-label"
+                          formControlName="respuestaSeleccionadaFrutas">
+          
+                          <div class="options">
+                              <img src="../../../assets/frutas-4.jpg" > <br>
+                              <mat-radio-button value="4" ></mat-radio-button>
+                          </div>
+          
+                          <div class="options">
+                              <img src="../../../assets/frutas-5.jpg" > <br>
+                              <mat-radio-button value="5"></mat-radio-button>
+                          </div>
+                     
+                          <div class="options">
+                              <img src="../../../assets/frutas-9.jpg" > <br>
+                              <mat-radio-button value="9"></mat-radio-button>
+                          </div>
+          
+                      </mat-radio-group>
+                  </div>
+              </div>
+              <div class="boton-next">
+                  <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+      
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+      
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+      
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+      
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+      
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+      
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+      
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <div class="preguntas">
+                    <div class="pregunta-i">
+                        <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                        <mat-radio-group
+                            class="elements"
+                            aria-labelledby="example-radio-group-label"
+                            formControlName="respuestaSeleccionadaFrutas">
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-4.jpg" > <br>
+                                <mat-radio-button value="4" ></mat-radio-button>
+                            </div>
+            
+                            <div class="options">
+                                <img src="../../../assets/frutas-5.jpg" > <br>
+                                <mat-radio-button value="5"></mat-radio-button>
+                            </div>
+                       
+                            <div class="options">
+                                <img src="../../../assets/frutas-9.jpg" > <br>
+                                <mat-radio-button value="9"></mat-radio-button>
+                            </div>
+            
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="boton-next">
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                <form [formGroup]="firstFormGroup">
+                  <ng-template matStepLabel></ng-template>
+                  <div class="preguntas">
+                      <div class="pregunta-i">
+                          <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                          <mat-radio-group
+                              class="elements"
+                              aria-labelledby="example-radio-group-label"
+                              formControlName="respuestaSeleccionadaFrutas">
+              
+                              <div class="options">
+                                  <img src="../../../assets/frutas-4.jpg" > <br>
+                                  <mat-radio-button value="4" ></mat-radio-button>
+                              </div>
+              
+                              <div class="options">
+                                  <img src="../../../assets/frutas-5.jpg" > <br>
+                                  <mat-radio-button value="5"></mat-radio-button>
+                              </div>
+                         
+                              <div class="options">
+                                  <img src="../../../assets/frutas-9.jpg" > <br>
+                                  <mat-radio-button value="9"></mat-radio-button>
+                              </div>
+              
+                          </mat-radio-group>
+                      </div>
+                  </div>
+                  <div class="boton-next">
+                      <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                  </div>
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel></ng-template>
+                    <div class="preguntas">
+                        <div class="pregunta-i">
+                            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                            <mat-radio-group
+                                class="elements"
+                                aria-labelledby="example-radio-group-label"
+                                formControlName="respuestaSeleccionadaFrutas">
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-4.jpg" > <br>
+                                    <mat-radio-button value="4" ></mat-radio-button>
+                                </div>
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-5.jpg" > <br>
+                                    <mat-radio-button value="5"></mat-radio-button>
+                                </div>
+                           
+                                <div class="options">
+                                    <img src="../../../assets/frutas-9.jpg" > <br>
+                                    <mat-radio-button value="9"></mat-radio-button>
+                                </div>
+                
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="boton-next">
+                        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                    </div>
+                  </form>
+                </mat-step>
+                <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel></ng-template>
+                    <div class="preguntas">
+                        <div class="pregunta-i">
+                            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                            <mat-radio-group
+                                class="elements"
+                                aria-labelledby="example-radio-group-label"
+                                formControlName="respuestaSeleccionadaFrutas">
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-4.jpg" > <br>
+                                    <mat-radio-button value="4" ></mat-radio-button>
+                                </div>
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-5.jpg" > <br>
+                                    <mat-radio-button value="5"></mat-radio-button>
+                                </div>
+                           
+                                <div class="options">
+                                    <img src="../../../assets/frutas-9.jpg" > <br>
+                                    <mat-radio-button value="9"></mat-radio-button>
+                                </div>
+                
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="boton-next">
+                        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                    </div>
+                  </form>
+                </mat-step>
+          
+                <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel></ng-template>
+                    <div class="preguntas">
+                        <div class="pregunta-i">
+                            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                            <mat-radio-group
+                                class="elements"
+                                aria-labelledby="example-radio-group-label"
+                                formControlName="respuestaSeleccionadaFrutas">
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-4.jpg" > <br>
+                                    <mat-radio-button value="4" ></mat-radio-button>
+                                </div>
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-5.jpg" > <br>
+                                    <mat-radio-button value="5"></mat-radio-button>
+                                </div>
+                           
+                                <div class="options">
+                                    <img src="../../../assets/frutas-9.jpg" > <br>
+                                    <mat-radio-button value="9"></mat-radio-button>
+                                </div>
+                
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="boton-next">
+                        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                    </div>
+                  </form>
+                </mat-step>
+          
+                <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel></ng-template>
+                    <div class="preguntas">
+                        <div class="pregunta-i">
+                            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                            <mat-radio-group
+                                class="elements"
+                                aria-labelledby="example-radio-group-label"
+                                formControlName="respuestaSeleccionadaFrutas">
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-4.jpg" > <br>
+                                    <mat-radio-button value="4" ></mat-radio-button>
+                                </div>
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-5.jpg" > <br>
+                                    <mat-radio-button value="5"></mat-radio-button>
+                                </div>
+                           
+                                <div class="options">
+                                    <img src="../../../assets/frutas-9.jpg" > <br>
+                                    <mat-radio-button value="9"></mat-radio-button>
+                                </div>
+                
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="boton-next">
+                        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                    </div>
+                  </form>
+                </mat-step>
+          
+                <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel></ng-template>
+                    <div class="preguntas">
+                        <div class="pregunta-i">
+                            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                            <mat-radio-group
+                                class="elements"
+                                aria-labelledby="example-radio-group-label"
+                                formControlName="respuestaSeleccionadaFrutas">
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-4.jpg" > <br>
+                                    <mat-radio-button value="4" ></mat-radio-button>
+                                </div>
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-5.jpg" > <br>
+                                    <mat-radio-button value="5"></mat-radio-button>
+                                </div>
+                           
+                                <div class="options">
+                                    <img src="../../../assets/frutas-9.jpg" > <br>
+                                    <mat-radio-button value="9"></mat-radio-button>
+                                </div>
+                
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="boton-next">
+                        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                    </div>
+                  </form>
+                </mat-step>
+          
+                <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel></ng-template>
+                    <div class="preguntas">
+                        <div class="pregunta-i">
+                            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                            <mat-radio-group
+                                class="elements"
+                                aria-labelledby="example-radio-group-label"
+                                formControlName="respuestaSeleccionadaFrutas">
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-4.jpg" > <br>
+                                    <mat-radio-button value="4" ></mat-radio-button>
+                                </div>
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-5.jpg" > <br>
+                                    <mat-radio-button value="5"></mat-radio-button>
+                                </div>
+                           
+                                <div class="options">
+                                    <img src="../../../assets/frutas-9.jpg" > <br>
+                                    <mat-radio-button value="9"></mat-radio-button>
+                                </div>
+                
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="boton-next">
+                        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                    </div>
+                  </form>
+                </mat-step>
+          
+                <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel></ng-template>
+                    <div class="preguntas">
+                        <div class="pregunta-i">
+                            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                            <mat-radio-group
+                                class="elements"
+                                aria-labelledby="example-radio-group-label"
+                                formControlName="respuestaSeleccionadaFrutas">
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-4.jpg" > <br>
+                                    <mat-radio-button value="4" ></mat-radio-button>
+                                </div>
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-5.jpg" > <br>
+                                    <mat-radio-button value="5"></mat-radio-button>
+                                </div>
+                           
+                                <div class="options">
+                                    <img src="../../../assets/frutas-9.jpg" > <br>
+                                    <mat-radio-button value="9"></mat-radio-button>
+                                </div>
+                
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="boton-next">
+                        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                    </div>
+                  </form>
+                </mat-step>
+          
+                <mat-step [stepControl]="firstFormGroup" errorMessage="Aun no se respondio">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel></ng-template>
+                    <div class="preguntas">
+                        <div class="pregunta-i">
+                            <label class="titulo" >Seleccione la imagen con mas elementos</label>
+                            <mat-radio-group
+                                class="elements"
+                                aria-labelledby="example-radio-group-label"
+                                formControlName="respuestaSeleccionadaFrutas">
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-4.jpg" > <br>
+                                    <mat-radio-button value="4" ></mat-radio-button>
+                                </div>
+                
+                                <div class="options">
+                                    <img src="../../../assets/frutas-5.jpg" > <br>
+                                    <mat-radio-button value="5"></mat-radio-button>
+                                </div>
+                           
+                                <div class="options">
+                                    <img src="../../../assets/frutas-9.jpg" > <br>
+                                    <mat-radio-button value="9"></mat-radio-button>
+                                </div>
+                
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="boton-next">
+                        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                    </div>
+                  </form>
+                </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Finalizado</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
+        <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+  

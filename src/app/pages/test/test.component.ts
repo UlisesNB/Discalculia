@@ -1,14 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { TestService } from '../../services/test.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  CdkDrag,
+  transferArrayItem
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  styleUrls: ['./test.component.scss'],
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: {showError: true}
+  }]
 })
 export class TestComponent implements OnInit {
 
-  respuestaSeleccionadaFrutas: string;
+  items = ['Cero', 'Uno', 'Tres', 'Dos', 'Cinco'];
+
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  // respuestaSeleccionadaFrutas: FormGroup;
   respuestaSeleccionadaArboles: string;
 
   contarArray: number[]
@@ -51,15 +68,30 @@ export class TestComponent implements OnInit {
   contar: number;
   enumerar: number;
 
-  constructor(private testService: TestService) {
+  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {
     this.analizarResultados();
   }
 
+  onDrop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.items, event.previousIndex, event.currentIndex);
+  }
+
+  // onTaskDrop(event: CdkDragDrop<Task[]>) {
+  //   if (event.previousContainer === event.container) {
+  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+  //   } else {
+  //     transferArrayItem(event.previousContainer.data,
+  //       event.container.data,
+  //       event.previousIndex,
+  //       event.currentIndex);
+  //   }
+  // }
+
   analizarResultados() {
 
-    if (this.respuestaSeleccionadaFrutas === '9') {
-      this.contar ++;
-    }
+    // if (this.respuestaSeleccionadaFrutas) {
+    //   this.contar ++;
+    // }
 
     if (this.respuestaSeleccionadaArboles === '9') {
       this.contar ++;
@@ -74,6 +106,19 @@ export class TestComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    this.firstFormGroup = this._formBuilder.group({
+      respuestaSeleccionadaFrutas: ['', Validators.required],
+
+    });
+    console.log('imprimir el valor de ejercicio 1', this.firstFormGroup.value);
   }
+
+  
 
 }

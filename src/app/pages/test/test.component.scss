@@ -50,4 +50,15 @@ img {
     margin: 80px;
 }
 
+.boton-next {
+    // position: relative;
+    float: right;
+    margin: 10px;
+    padding: 10px;
+}
+
+.boton-back {
+    margin: 10px;
+}
+
 input[type=number] { -moz-appearance:textfield; }
