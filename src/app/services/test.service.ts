@@ -8,26 +8,21 @@ import { Observable } from 'rxjs';
 })
 export class TestService {
 
-  private _url: string = 'http://127.0.0.1:8000';
+  private _url: string = 'http://127.0.0.1:8000/api/';
 
   constructor(private http: HttpClient) {
     console.log('Se conecta al service');
   }
 
   getUser() {
-    return this.http.get(`${this._url}/UserProfile`);
+    return this.http.get(`${this._url}UserProfile/`);
   }
 
-  /**
-   * 
-   * Comentado de momento hasta definir si los parametros enviados para el post seran mediante interfaces o individuales
-   */
-  // postResultados(contar: number, enumerar: number, comprension: number, logica: number, operaciones: number, estimacion: number) {
-  //   return this.http.post(`${this._url}/UserProfile`)
-  // }
-  
-  postResultados(contar: number) {
-    return this.http.post(`${this._url}/Ejercitario`, contar)
+  getUserId(id: number) {
+    return this.http.get(`${this._url}UserProfile/${id}`);
   }
+
+
+
 
 }

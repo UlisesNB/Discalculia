@@ -21,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ResultadosComponent } from './pages/resultados/resultados.component';
+import { ResultadosDetallesComponent } from './pages/resultados-detalles/resultados-detalles.component';
 
 
 
@@ -30,7 +32,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     LoginComponent,
     TestComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    ResultadosComponent,
+    ResultadosDetallesComponent
   ],
   imports: [
     BrowserModule,

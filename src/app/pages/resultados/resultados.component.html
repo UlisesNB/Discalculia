@@ -1,0 +1,22 @@
+<p>LISTA DE RESULTADOS</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nº</th>
+            <th scope="col">Nombre y Apellido</th>
+            <th scope="col">Puntaje Total</th>
+            <th scope="col">Diagnostico</th>
+            <th scope="col">Informacion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let resultado of resultados">
+          <th> {{resultado.id}} </th>
+          <th colspan="2"> {{resultado.loggin}} </th>
+          <th> {{resultado.password}} </th>
+          <th > <button type="button" class="btn btn-primary" routerLink="/detalles/{{resultado.id}}">Ver más</button></th>
+
+
+        </tr>
+      </tbody>
+</table>
