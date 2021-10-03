@@ -23,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { ResultadosDetallesComponent } from './pages/resultados-detalles/resultados-detalles.component';
+import { RegistrarAlumnoComponent } from './pages/registrar-alumno/registrar-alumno.component';
 
 
 
@@ -34,7 +35,8 @@ import { ResultadosDetallesComponent } from './pages/resultados-detalles/resulta
     NavbarComponent,
     HomeComponent,
     ResultadosComponent,
-    ResultadosDetallesComponent
+    ResultadosDetallesComponent,
+    RegistrarAlumnoComponent
   ],
   imports: [
     BrowserModule,

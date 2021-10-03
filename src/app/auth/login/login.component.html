@@ -1,0 +1,39 @@
+
+<div class="container formulario">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                LOGIN
+            </div>
+            <div class="card-body ">
+                <form (submit)="signIn()" >
+                  <mat-form-field class="example-full-width ">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput [(ngModel)]="user.email" name="email" class="form-control " placeholder="Email" required >
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                      Por favor ingrese una dirección de correo valida.
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                      Este campo es <strong>obligatorio</strong>
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required >
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                      Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                      Este campo es <strong>obligatorio</strong>
+                    </mat-error>
+                  </mat-form-field>
+                    <button type="submit" class="btn btn-primary btn-block login-button">
+                      Iniciar Sesión
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
