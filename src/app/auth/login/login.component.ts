@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router'
+
 
 
 @Component({
@@ -13,31 +14,75 @@ import { Router } from '@angular/router'
 export class LoginComponent implements OnInit {
 
   user = {
-    email: '',
+    loggin: '',
     password: ''
   };
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  passwordFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
+
+  userForm = new FormGroup({
+    loggin: new FormControl('', [
+      Validators.required,
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+    ])
+  })
+
+  //   loggin = new FormControl('', [
+  //   Validators.required,
+  // ]);
+  // password = new FormControl('', [
+  //   Validators.required,
+  // ]);
+
+  // emailFormControl = new FormControl('', [
+  //   Validators.required,
+  //   Validators.email,
+  // ]);
+  // passwordFormControl = new FormControl('', [
+  //   Validators.required,
+  //   Validators.email,
+  // ]);
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  signIn() {
-    this.authService.signInUser(this.user)
+  // signIn() {
+  //   this.authService.signInUser(this.user)
+  //     .subscribe(
+  //       res => {
+  //         console.log(res);
+  //         console.log('Que imprime???', this.user);
+  //         this.router.navigate(['/test']);
+  //       },
+  //       err => console.log(err)
+  //     )
+  // }
+
+  signIn(): void {
+    console.log('Valor original: ', this.userForm.value);
+    console.log('JSON.stringify: ', JSON.stringify(this.userForm.value));
+    this.authService.signInUser(JSON.stringify(this.userForm.value))
       .subscribe(
         res => {
           console.log(res);
-          this.router.navigate(['/home']);
+          console.log('Que imprime???', this.userForm.value);
+          this.router.navigate(['/test']);
         },
         err => console.log(err)
       )
   }
+
+  // signIn() {
+  //   this.authService.signInUser(this.loggin, this.password)
+  //     .subscribe(
+  //       res => {
+  //         console.log(res);
+  //         console.log('Que imprime???', this.loggin, this.password);
+  //         this.router.navigate(['/test']);
+  //       },
+  //       err => console.log(err)
+  //     )
+  // }
 
 }
