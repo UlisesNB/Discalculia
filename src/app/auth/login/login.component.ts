@@ -3,9 +3,6 @@ import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '
 import {ErrorStateMatcher} from '@angular/material/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router'
-
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,6 +15,8 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  response: any;
+  
   userForm = new FormGroup({
     loggin: new FormControl('', [
       Validators.required,
@@ -60,14 +59,16 @@ export class LoginComponent implements OnInit {
   // }
 
   signIn(): void {
-    console.log('Valor original: ', this.userForm.value);
-    console.log('JSON.stringify: ', JSON.stringify(this.userForm.value));
-    this.authService.signInUser(JSON.stringify(this.userForm.value))
+    this.authService.signInUser(this.userForm.value)
       .subscribe(
-        res => {
-          console.log(res);
-          console.log('Que imprime???', this.userForm.value);
-          this.router.navigate(['/test']);
+        res  => {
+          console.log('Respuesta del servidor: ', res);
+
+          this.response = JSON.parse(JSON.stringify(res))
+
+          localStorage.setItem('token', this.response.access_token);
+
+          this.router.navigate(['/home']);
         },
         err => console.log(err)
       )

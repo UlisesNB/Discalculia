@@ -28,6 +28,8 @@ import { MatCardModule } from '@angular/material/card';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
+import { AuthGuard } from './auth.guard';
+
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatCardModule
   ],
 
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

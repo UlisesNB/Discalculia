@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from './auth.guard';
+
+
 //Se importan las rutas que seran necesarias para la navegacion
 import { TestComponent } from './pages/test/test.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,9 +16,11 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'test', component: TestComponent},
-  {path: 'resultados', component: ResultadosComponent},
+  {path: 'resultados', component: ResultadosComponent, canActivate: [AuthGuard]},
   {path: 'detalles/:id', component: ResultadosDetallesComponent},
-  {path: 'registrar-alumno', component: RegistrarAlumnoComponent},
+  {path: 'registrar-alumno', component: RegistrarAlumnoComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: HomeComponent},
+
 
 
 ];
