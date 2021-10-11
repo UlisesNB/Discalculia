@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { TestService } from '../../services/test.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 import {
@@ -20,49 +20,70 @@ import {
 })
 export class TestComponent implements OnInit {
 
-  items = ['Cero', 'Uno', 'Tres', 'Dos', 'Cinco'];
+  items = ['Cero', 'Uno', 'Tres', 'Dos', 'Cinco'];  
 
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  contarFormGroup = new FormGroup ({
+    respuestaSeleccionadaFrutas: new FormControl('', Validators.required),
+    respuestaSeleccionadaArboles: new FormControl('', Validators.required),
+    contar_3_1: new FormControl('', Validators.required),
+    contar_3_2: new FormControl('', Validators.required),
+    contar_3_3: new FormControl('', Validators.required),
+    contar_3_4: new FormControl('', Validators.required),
+  
+    contar_7_1: new FormControl('', Validators.required),
+    contar_7_2: new FormControl('', Validators.required),
+    contar_7_3: new FormControl('', Validators.required),
+    contar_7_4: new FormControl('', Validators.required),
+  
+    contarLimInfSup_5_1: new FormControl('', Validators.required),
+    contarLimInfSup_5_2: new FormControl('', Validators.required),
+    contarLimInfSup_5_3: new FormControl('', Validators.required),
+    contarLimInfSup_5_4: new FormControl('', Validators.required),
+    contarLimInfSup_5_5: new FormControl('', Validators.required),
+  
+    contarLimInfSup_4_1: new FormControl('', Validators.required),
+    contarLimInfSup_4_2: new FormControl('', Validators.required),
+    contarLimInfSup_4_3: new FormControl('', Validators.required),
+    contarLimInfSup_4_4: new FormControl('', Validators.required),
+    contarLimInfSup_4_5: new FormControl('', Validators.required),
+  
+    contarAtras_7_1: new FormControl('', Validators.required),
+    contarAtras_7_2: new FormControl('', Validators.required),
+    contarAtras_7_3: new FormControl('', Validators.required),
+    contarAtras_7_4: new FormControl('', Validators.required),
+    contarAtras_7_5: new FormControl('', Validators.required),
+  
+    contarAtras_15_1: new FormControl('', Validators.required),
+    contarAtras_15_2: new FormControl('', Validators.required),
+    contarAtras_15_3: new FormControl('', Validators.required),
+    contarAtras_15_4: new FormControl('', Validators.required),
+    contarAtras_15_5: new FormControl('', Validators.required),
 
-  // respuestaSeleccionadaFrutas: FormGroup;
+  });
+
+  enumerarFormGroup = new FormGroup({
+    corazones:  new FormControl('', Validators.required), 
+    ratones:  new FormControl('', Validators.required),
+    dinosaurios:  new FormControl('', Validators.required),
+    aviones:  new FormControl('', Validators.required),
+    estrellas: new FormControl('', Validators.required),
+  });
+
+  correcta1 = false;
+  correcta2 = false;
+  correcta3 = false;
+  correcta4 = false;
+  incorrecta1 = false;
+  incorrecta2 = false;
+  incorrecta3 = false;
+
+
+
+  sistNumFormGroup = new FormArray([])
+
   respuestaSeleccionadaArboles: string;
 
   contarArray: number[]
-
-  contar_3_1:number
-  contar_3_2:number
-  contar_3_3:number
-  contar_3_4:number
-
-  contar_7_1:number
-  contar_7_2:number
-  contar_7_3:number
-  contar_7_4:number
-
-  contarLimInfSup_5_1:number
-  contarLimInfSup_5_2:number
-  contarLimInfSup_5_3:number
-  contarLimInfSup_5_4:number
-  contarLimInfSup_5_5:number
-
-  contarLimInfSup_4_1:number
-  contarLimInfSup_4_2:number
-  contarLimInfSup_4_3:number
-  contarLimInfSup_4_4:number
-  contarLimInfSup_4_5:number
-
-  contarAtras_7_1:number
-  contarAtras_7_2:number
-  contarAtras_7_3:number
-  contarAtras_7_4:number
-  contarAtras_7_5:number
-
-  contarAtras_15_1:number
-  contarAtras_15_2:number
-  contarAtras_15_3:number
-  contarAtras_15_4:number
-  contarAtras_15_5:number
 
   //Contadores
   contar: number;
@@ -97,28 +118,21 @@ export class TestComponent implements OnInit {
       this.contar ++;
     }
 
-    if (this.contar_3_1 === 4 && this.contar_3_2 === 5 && this.contar_3_3 === 6 && this.contar_3_4 === 7 ) {
-      this.contar ++;
-    }
 
   }
 
 
   ngOnInit(): void {
 
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-    this.firstFormGroup = this._formBuilder.group({
-      respuestaSeleccionadaFrutas: ['', Validators.required],
-
-    });
-    console.log('imprimir el valor de ejercicio 1', this.firstFormGroup.value);
   }
 
+
+  verResultado() {
+    console.log('Resultado: ', this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value);
+  }
+
+
   
+  // console.log('Valor: ', this.firstFormGroup);
 
 }

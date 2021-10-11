@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   };
 
   response: any;
-  
+
   userForm = new FormGroup({
     loggin: new FormControl('', [
       Validators.required,

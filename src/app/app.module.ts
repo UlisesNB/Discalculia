@@ -25,12 +25,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AuthGuard } from './auth.guard';
-
-
 
 @NgModule({
   declarations: [
@@ -57,7 +57,8 @@ import { AuthGuard } from './auth.guard';
     MatInputModule,
     MatButtonModule,
     DragDropModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule
   ],
 
   providers: [
