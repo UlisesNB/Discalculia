@@ -79,7 +79,42 @@ export class TestComponent implements OnInit {
 
 
 
-  sistNumFormGroup = new FormArray([])
+  sistNumFormGroup = new FormGroup({
+    elegirMayor_2_10: new FormControl('', Validators.required),
+    elegirMayor_2_6: new FormControl('', Validators.required),
+    elegirMayor_4_5: new FormControl('', Validators.required),
+    elegirMayor_8_7: new FormControl('', Validators.required),
+    elegirMayor_9_3: new FormControl('', Validators.required),
+
+    sieteControl: new FormControl('', Validators.required),
+    domingoControl: new FormControl('', Validators.required),
+    onceControl: new FormControl('', Validators.required),
+    bicienControl: new FormControl('', Validators.required),
+    julioControl: new FormControl('', Validators.required),
+    cincoControl: new FormControl('', Validators.required),
+    setentaControl: new FormControl('', Validators.required),
+    sesienteControl: new FormControl('', Validators.required),
+    treintaControl: new FormControl('', Validators.required),
+    catorceControl: new FormControl('', Validators.required),
+    dinceControl: new FormControl('', Validators.required),
+    juevesControl: new FormControl('', Validators.required),
+
+
+  });
+
+    sieteControl = false; 
+    domingoControl = false; 
+    onceControl = false; 
+    bicienControl = false; 
+    julioControl = false; 
+    cincoControl = false; 
+    setentaControl = false; 
+    sesienteControl = false; 
+    treintaControl = false; 
+    catorceControl = false; 
+    dinceControl = false; 
+    juevesControl = false; 
+
 
   respuestaSeleccionadaArboles: string;
 
@@ -88,6 +123,9 @@ export class TestComponent implements OnInit {
   //Contadores
   contar: number;
   enumerar: number;
+  sistNumerico: number;
+  
+  puntajeTotal: number;
 
   constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {
     this.analizarResultados();
