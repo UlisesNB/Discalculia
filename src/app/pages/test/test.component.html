@@ -406,11 +406,11 @@
     </mat-step>
 
     <mat-step [stepControl]="sistNumFormGroup" errorMessage="Aun no se respondio">
-        <form [formGroup]="sistNumFormGroup">
+        <form >
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Cuenta cuantos aviones hay</label>
+                    <label class="titulo">Lee las siguientes palabras y selecciona las que son números</label>
                     <div class="elements" aria-labelledby="example-radio-group-label">
 
                         <!-- <ul>
@@ -438,56 +438,55 @@
                         </ul> -->
 
                         <section>
-
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="sieteControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Siete</span>
+                                <mat-checkbox  type="number" name="sieteControl" [(ngModel)]="sieteControl"></mat-checkbox>
                             </div>
                             
-                            <div >
-                                <label>Siete 
-                                    <mat-checkbox class="enumerar-input" type="number" formControlName="domingoControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <label>Domingo 
+                                    <mat-checkbox  type="number" name="domingoControl" [(ngModel)]="domingoControl"></mat-checkbox>
                                 </label>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="onceControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Once</span>
+                                <mat-checkbox  type="number" name="onceControl" [(ngModel)]="onceControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="bicienControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Bicien</span>
+                                <mat-checkbox  type="number" name="bicienControl" [(ngModel)]="bicienControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="julioControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Julio</span>
+                                <mat-checkbox  type="number" name="julioControl" [(ngModel)]="julioControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="cincoControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Cinco</span>
+                                <mat-checkbox  type="number" name="cincoControl" [(ngModel)]="cincoControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="setentaControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Setenta</span>
+                                <mat-checkbox  type="number" name="setentaControl" [(ngModel)]="setentaControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="sesienteControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Sesiente</span>
+                                <mat-checkbox  type="number" name="sesienteControl" [(ngModel)]="sesienteControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="treintaControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Treinta</span>
+                                <mat-checkbox  type="number" name="treintaControl" [(ngModel)]="treintaControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="catorceControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Catorce</span>
+                                <mat-checkbox  type="number" name="catorceControl" [(ngModel)]="catorceControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="dinceControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Dince</span>
+                                <mat-checkbox  type="number" name="dinceControl" [(ngModel)]="dinceControl"></mat-checkbox>
                             </div>
-                            <div >
-                                <span>Siete</span>
-                                <mat-checkbox class="enumerar-input" type="number" formControlName="juevesControl"></mat-checkbox>
+                            <div class="opciones-list" >
+                                <span class="opcion-text">Jueves</span>
+                                <mat-checkbox  type="number" name="juevesControl" [(ngModel)]="juevesControl"></mat-checkbox>
                             </div>
                         </section>
 
