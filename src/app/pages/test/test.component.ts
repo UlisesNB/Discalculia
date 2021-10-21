@@ -20,7 +20,34 @@ import {
 })
 export class TestComponent implements OnInit {
 
-  items = ['Cero', 'Uno', 'Tres', 'Dos', 'Cinco'];  
+  items = [
+    {
+      title: '2',
+      img: '/assets/dos-estrellas.jpg'
+    },
+    {
+      title: '5',
+      img: '/assets/cinco-estrellas.jpg'
+    },
+    {
+      title: '4',
+      img: '/assets/cuatro-estrellas.jpg'
+    },
+    {
+      title: '1',
+      img: '/assets/una-estrella.jpg'
+    },
+    {
+      title: '3',
+      img: '/assets/tres-estrellas.png'
+    }
+  ];
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.items, event.previousIndex, event.currentIndex);
+    console.log(this.items[0].title);
+
+  }
 
   contarFormGroup = new FormGroup ({
     respuestaSeleccionadaFrutas: new FormControl('', Validators.required),
@@ -115,6 +142,32 @@ export class TestComponent implements OnInit {
     dinceControl = false; 
     juevesControl = false; 
 
+    operacionesLogicas = new FormGroup({
+      controlPiezas: new FormControl('', Validators.required),
+      controlCartaMenosOcho: new FormControl('', Validators.required),
+      controlCartaMenosCuatro: new FormControl('', Validators.required),
+      controlCartaMenosSiete: new FormControl('', Validators.required),
+
+      controlRellenarCuatro: new FormControl('', Validators.required),
+      controllRellenarMenosCuatro: new FormControl('', Validators.required),
+      controllRellenarTres: new FormControl('', Validators.required),
+      controllRellenarSiete: new FormControl('', Validators.required),
+      controllRellenarDoce: new FormControl('', Validators.required),
+      controllRellenarNueve: new FormControl('', Validators.required),
+      controllRellenarResultCuatro: new FormControl('', Validators.required),
+      controllRellenarVenteYOcho: new FormControl('', Validators.required),
+
+    });
+    
+    operaciones = new FormGroup({
+      controlGlobos: new FormControl('', Validators.required),
+      controlLapices: new FormControl('', Validators.required),
+      controlConejos: new FormControl('', Validators.required),
+      controlPelotas: new FormControl('', Validators.required),
+      controlFlores: new FormControl('', Validators.required),
+
+    })
+
 
   respuestaSeleccionadaArboles: string;
 
@@ -160,7 +213,7 @@ export class TestComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
 
   }
 
