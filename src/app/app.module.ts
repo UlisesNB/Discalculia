@@ -22,13 +22,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatStepperModule } from '@angular/material/stepper';
+import {MatStepperModule} from '@angular/material/stepper';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
-
+// Angular Material CDK 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import {ObserversModule} from '@angular/cdk/observers';
+import {CdkStepperModule} from '@angular/cdk/stepper';
 
 import { AuthGuard } from './auth.guard';
 
@@ -58,7 +60,9 @@ import { AuthGuard } from './auth.guard';
     MatButtonModule,
     DragDropModule,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ObserversModule,
+    CdkStepperModule
   ],
 
   providers: [

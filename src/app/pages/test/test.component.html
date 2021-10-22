@@ -1,5 +1,5 @@
-<mat-horizontal-stepper #stepper>
-    <mat-step [stepControl]="contarFormGroup" errorMessage="Aun no se respondio">
+<mat-horizontal-stepper #stepper (selectionChange)="onStepChange($event)" >
+    <mat-step [stepControl]="contarFormGroup" >
         <form [formGroup]="contarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -34,7 +34,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="contarFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="contarFormGroup" >
         <form [formGroup]="contarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -70,7 +70,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="contarFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="contarFormGroup" >
         <form [formGroup]="contarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div>
@@ -172,7 +172,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="enumerarFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="enumerarFormGroup" >
         <form [formGroup]="enumerarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -195,7 +195,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="enumerarFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="enumerarFormGroup" >
         <form [formGroup]="enumerarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -216,7 +216,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="enumerarFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="enumerarFormGroup" >
         <form [formGroup]="enumerarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -240,7 +240,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="enumerarFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="enumerarFormGroup" >
         <form [formGroup]="enumerarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -261,7 +261,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="enumerarFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="enumerarFormGroup" >
         <form [formGroup]="enumerarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -285,7 +285,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="sistNumFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="sistNumFormGroup" >
         <form>
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -327,7 +327,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="sistNumFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="sistNumFormGroup" >
         <form [formGroup]="sistNumFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -417,7 +417,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="sistNumFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="sistNumFormGroup" >
         <form>
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -498,7 +498,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="enumerarFormGroup" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="enumerarFormGroup" >
         <form [formGroup]="enumerarFormGroup">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -523,7 +523,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operacionesLogicas" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operacionesLogicas" >
         <form [formGroup]="operacionesLogicas">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -553,7 +553,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operacionesLogicas" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operacionesLogicas" >
         <form [formGroup]="operacionesLogicas">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -618,7 +618,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operacionesLogicas" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operacionesLogicas" >
         <form [formGroup]="operacionesLogicas">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -676,7 +676,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operaciones" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operaciones" >
         <form [formGroup]="operaciones">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -685,7 +685,7 @@
                     <div class="elements">
 
                         <div class="options">
-                            <img src="../../../assets/globos-2.jpg"> 
+                            <img src="../../../assets/globos-2.jpg">
                         </div>
                         <div class="options">
                             <span class="signos"> + </span>
@@ -705,7 +705,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operaciones" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operaciones" >
         <form [formGroup]="operaciones">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -721,7 +721,7 @@
                         <div class="options">
                             <span class="signos"> + </span>
                         </div>
-    
+
                         <div class="options">
                             <img src="../../../assets/lapices-3.png"> <span class="signos"> = </span>
                             <input class="numeros" type="number" formControlName="controlLapices"> <br><br>
@@ -738,7 +738,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operaciones" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operaciones" >
         <form [formGroup]="operaciones">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -754,7 +754,7 @@
                         <div class="options">
                             <span class="signos"> + </span>
                         </div>
-    
+
                         <div class="options">
                             <img src="../../../assets/conejitos-4.jpg"> <span class="signos"> = </span>
                             <input class="numeros" type="number" formControlName="controlConejos"> <br><br>
@@ -770,7 +770,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operaciones" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operaciones" >
         <form [formGroup]="operaciones">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -786,12 +786,12 @@
                         <div class="options">
                             <span class="signos"> + </span>
                         </div>
-    
+
                         <div class="options">
                             <img src="../../../assets/pelotas-4.jpg"> <span class="signos"> = </span>
                             <input class="numeros" type="number" formControlName="controlPelotas"> <br><br>
                         </div>
-    
+
                     </div>
 
                 </div>
@@ -802,7 +802,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operaciones" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operaciones" >
         <form [formGroup]="operaciones">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -818,7 +818,7 @@
                         <div class="options">
                             <span class="signos"> + </span>
                         </div>
-    
+
                         <div class="options">
                             <img src="../../../assets/flores-4.jpg"> <span class="signos"> = </span>
                             <input class="numeros" type="number" formControlName="controlFlores"> <br><br>
@@ -834,7 +834,7 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="operaciones" errorMessage="Aun no se respondio">
+    <mat-step [stepControl]="operaciones" >
         <form [formGroup]="operaciones">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
@@ -864,13 +864,50 @@
                         <input class="numeros" type="number" value="5" disabled> <span class="signos"> = </span>
                         <input class="numeros" type="number" formControlName="ControlSumasCinco"> <br><br>
 
-
                     </div> <br>
 
                 </div>
             </div>
             <div class="boton-next">
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                <button mat-raised-button color="primary" (click)="ocultar()" matStepperNext>Siguiente</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="estimacion" >
+        <form [formGroup]="estimacion" >
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo">OPERACIONES CON AYUDA DE IMÁGENES</label>
+
+                    <div *ngIf="ocultarImagen">
+                        <div class="options">
+                            <img src="../../../assets/frutas-5.jpg"> <br>
+                        </div>
+    
+                        <div class="options">
+                            <img src="../../../assets/frutas-9.jpg"> <br>
+                        </div>
+                    </div>
+
+                    <mat-radio-group *ngIf="mostrarOpciones" class="elements"
+                        aria-labelledby="example-radio-group-label" formControlName="controlEjercicioUno">
+
+                        <div>
+                            18
+                            <mat-radio-button value="si"></mat-radio-button>
+                        </div>
+                        <div>
+                            11
+                            <mat-radio-button value="no"></mat-radio-button>
+                        </div>
+
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" (click)="verResultado()" matStepperNext>Siguiente</button>
             </div>
         </form>
     </mat-step>

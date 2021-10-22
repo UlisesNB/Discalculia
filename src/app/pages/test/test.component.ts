@@ -1,17 +1,17 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { TestService } from '../../services/test.service';
 import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
-import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import {StepperSelectionEvent, STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 import {
   CdkDragDrop,
   moveItemInArray,
-  CdkDrag,
-  transferArrayItem
 } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-test',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss'],
   providers: [{
@@ -172,6 +172,13 @@ export class TestComponent implements OnInit {
       ControlSumasCinco: new FormControl('', Validators.required),
     });
 
+    estimacion = new FormGroup({
+      controlEjercicioUno: new FormControl('', Validators.required),
+    });
+
+    ocultarImagen: boolean = true;
+    mostrarOpciones: boolean = false;
+
 
   respuestaSeleccionadaArboles: string;
 
@@ -192,33 +199,35 @@ export class TestComponent implements OnInit {
     moveItemInArray(this.items, event.previousIndex, event.currentIndex);
   }
 
-  // onTaskDrop(event: CdkDragDrop<Task[]>) {
-  //   if (event.previousContainer === event.container) {
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //   } else {
-  //     transferArrayItem(event.previousContainer.data,
-  //       event.container.data,
-  //       event.previousIndex,
-  //       event.currentIndex);
-  //   }
-  // }
+
 
   analizarResultados() {
 
-    // if (this.respuestaSeleccionadaFrutas) {
-    //   this.contar ++;
-    // }
 
     if (this.respuestaSeleccionadaArboles === '9') {
       this.contar ++;
     }
-
-
   }
 
+  ngOnInit(): void { 
+    
+  }
 
-  ngOnInit(): void {    
+  onStepChange(evt: StepperSelectionEvent): void {
+    console.log('step change', evt.selectedIndex);
+    if(evt.selectedIndex == 21) {
+      this.ocultar();
+    }
+  }
 
+  ocultar() {
+    console.log('se llama');
+    window.setInterval(() => {
+      this.ocultarImagen = true;
+      this.mostrarOpciones = false
+    }, 2000)
+    this.ngOnInit()
+    console.log('ya????...');
   }
 
 
@@ -226,8 +235,5 @@ export class TestComponent implements OnInit {
     console.log('Resultado: ', this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value);
   }
 
-
-  
-  // console.log('Valor: ', this.firstFormGroup);
 
 }
