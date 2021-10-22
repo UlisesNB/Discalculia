@@ -7,6 +7,7 @@ import {
   CdkDragDrop,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
+import { $ } from 'protractor';
 
 
 @Component({
@@ -214,21 +215,22 @@ export class TestComponent implements OnInit {
   }
 
   onStepChange(evt: StepperSelectionEvent): void {
-    console.log('step change', evt.selectedIndex);
+    console.log('Id del step', evt.selectedIndex);
     if(evt.selectedIndex == 21) {
-      this.ocultar();
+      this.hide();
     }
   }
 
-  ocultar() {
+  hide() {
     console.log('se llama');
-    window.setInterval(() => {
-      this.ocultarImagen = true;
-      this.mostrarOpciones = false
+    window.setTimeout(() => {
+      this.ocultarImagen = false;
+      this.mostrarOpciones = true;
+      console.log('ya?');
+      this.ngOnInit()
     }, 2000)
-    this.ngOnInit()
-    console.log('ya????...');
   }
+
 
 
   verResultado() {
