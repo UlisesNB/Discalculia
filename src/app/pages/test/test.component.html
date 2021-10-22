@@ -834,6 +834,47 @@
         </form>
     </mat-step>
 
+    <mat-step [stepControl]="operaciones" errorMessage="Aun no se respondio">
+        <form [formGroup]="operaciones">
+            <ng-template matStepLabel></ng-template>
+            <div class="preguntas">
+                <div class="pregunta-i">
+                    <label class="titulo">Sumas simples</label>
+
+                    <div>
+                        <h3> Rellena el numero que falta </h3>
+
+                        <input class="numeros" type="number" value="2" disabled> <span class="signos"> + </span>
+                        <input class="numeros" type="number" value="2" disabled> <span class="signos"> = </span>
+                        <input class="numeros" type="number" formControlName="controlSumasUno"> <br><br>
+
+                        <input class="numeros" type="number" value="0" disabled> <span class="signos"> + </span>
+                        <input class="numeros" type="number" value="8" disabled> <span class="signos"> = </span>
+                        <input class="numeros" type="number" formControlName="controlSumasDos"> <br><br>
+
+                        <input class="numeros" type="number" value="6" disabled> <span class="signos"> + </span>
+                        <input class="numeros" type="number" value="3" disabled> <span class="signos"> = </span>
+                        <input class="numeros" type="number" formControlName="controlSumasTres"> <br><br>
+
+                        <input class="numeros" type="number" value="3" disabled> <span class="signos"> + </span>
+                        <input class="numeros" type="number" value="0" disabled> <span class="signos"> = </span>
+                        <input class="numeros" type="number" formControlName="ControlSumasCuatro"> <br><br>
+
+                        <input class="numeros" type="number" value="3" disabled> <span class="signos"> + </span>
+                        <input class="numeros" type="number" value="5" disabled> <span class="signos"> = </span>
+                        <input class="numeros" type="number" formControlName="ControlSumasCinco"> <br><br>
+
+
+                    </div> <br>
+
+                </div>
+            </div>
+            <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+        </form>
+    </mat-step>
+
 
     <mat-step>
         <ng-template matStepLabel>Finalizado</ng-template>

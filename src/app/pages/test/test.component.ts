@@ -165,8 +165,12 @@ export class TestComponent implements OnInit {
       controlConejos: new FormControl('', Validators.required),
       controlPelotas: new FormControl('', Validators.required),
       controlFlores: new FormControl('', Validators.required),
-
-    })
+      controlSumasUno: new FormControl('', Validators.required),
+      controlSumasDos: new FormControl('', Validators.required),
+      controlSumasTres: new FormControl('', Validators.required),
+      ControlSumasCuatro: new FormControl('', Validators.required),
+      ControlSumasCinco: new FormControl('', Validators.required),
+    });
 
 
   respuestaSeleccionadaArboles: string;
