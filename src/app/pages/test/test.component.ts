@@ -183,31 +183,31 @@ export class TestComponent implements OnInit {
   contarArray: number[]
 
   //Contadores
-  contarTotal: number;
-  enumerarTotal: number;
-  sistNumericoTotal: number;
-  operLogicasTotal: number;
-  operacionesTotal: number;
-  estimTamanhoTotal: number;
+  contarTotal: number = 0;
+  enumerarTotal: number = 0;
+  sistNumericoTotal: number = 0;
+  operLogicasTotal: number = 0;
+  operacionesTotal: number = 0;
+  estimTamanhoTotal: number = 0;
 
-  arrayTest = [];
+  arrayTest: any[] = [];
 
   objContar = {
-    
+    id_resultadoTest: null,
+    id_area: 1,
+    pObtenido: 0,
+    indicador: null,
+    observacion: null
   }
 
 
   
 
-  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {
-    this.analizarResultadosContar();
-  }
+  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {}
 
 
 
-  ngOnInit(): void { 
-    
-  }
+  ngOnInit(): void {}
 
   analizarResultadosContar() {
 
@@ -256,6 +256,12 @@ export class TestComponent implements OnInit {
       && this.contarFormGroup.controls['contarAtras_15_5'].value == 11) {
       this.contarTotal++;
     };
+
+    console.log('Total contar: ', this.contarTotal);
+    this.objContar.pObtenido = this.contarTotal;
+
+    this.arrayTest.push(this.objContar)
+    console.log('Resultado: ', this.arrayTest);
 
   }
 
