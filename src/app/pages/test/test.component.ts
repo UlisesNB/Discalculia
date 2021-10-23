@@ -218,9 +218,21 @@ export class TestComponent implements OnInit {
       this.contarTotal ++;
     };
 
-    if (this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value == '9') {
+    if (this.contarFormGroup.controls['contar_3_1'].value == 4 && this.contarFormGroup.controls['contar_3_2'].value == 5 
+      && this.contarFormGroup.controls['contar_3_3'].value == 6 && this.contarFormGroup.controls['contar_3_4'].value == 7) {
       this.contarTotal ++;
     };
+
+    if (this.contarFormGroup.controls['contar_7_1'].value == 8 && this.contarFormGroup.controls['contar_7_2'].value == 9 
+      && this.contarFormGroup.controls['contar_7_3'].value == 10 && this.contarFormGroup.controls['contar_7_4'].value == 11) {
+      this.contarTotal++;
+    };
+
+    if (this.contarFormGroup.controls['contar_7_1'].value == 8 && this.contarFormGroup.controls['contar_7_2'].value == 9
+      && this.contarFormGroup.controls['contar_7_3'].value == 10 && this.contarFormGroup.controls['contar_7_4'].value == 11) {
+      this.contarTotal++;
+    };
+
 
 
   }
