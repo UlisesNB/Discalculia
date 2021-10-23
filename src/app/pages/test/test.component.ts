@@ -527,6 +527,12 @@ export class TestComponent implements OnInit {
 
   };
 
+  analizarResultadosEstimTamanho() {
+    if (this.estimacion.controls['controlEjercicioUno'].value == 18) {
+      
+    }
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.items, event.previousIndex, event.currentIndex);
     console.log(this.items[0].orden);
