@@ -98,6 +98,8 @@ export class TestComponent implements OnInit {
   correcta2 = false;
   correcta3 = false;
   correcta4 = false;
+  correcta5 = false;
+
   incorrecta1 = false;
   incorrecta2 = false;
   incorrecta3 = false;
@@ -200,7 +202,7 @@ export class TestComponent implements OnInit {
 
   objEnumerar = {
     id_resultadoTest: null,
-    id_area: 1,
+    id_area: 2,
     pObtenido: 0,
     indicador: null,
     observacion: null
@@ -208,7 +210,7 @@ export class TestComponent implements OnInit {
 
   objSistNumerico = {
     id_resultadoTest: null,
-    id_area: 1,
+    id_area: 3,
     pObtenido: 0,
     indicador: null,
     observacion: null
@@ -216,7 +218,7 @@ export class TestComponent implements OnInit {
 
   objOperLogicas = {
     id_resultadoTest: null,
-    id_area: 1,
+    id_area: 4,
     pObtenido: 0,
     indicador: null,
     observacion: null
@@ -224,7 +226,7 @@ export class TestComponent implements OnInit {
 
   objOperaciones = {
     id_resultadoTest: null,
-    id_area: 1,
+    id_area: 5,
     pObtenido: 0,
     indicador: null,
     observacion: null
@@ -232,7 +234,7 @@ export class TestComponent implements OnInit {
 
   objEstimTamanho = {
     id_resultadoTest: null,
-    id_area: 1,
+    id_area: 6,
     pObtenido: 0,
     indicador: null,
     observacion: null
@@ -325,7 +327,109 @@ export class TestComponent implements OnInit {
 
   analizarResultadossitemasNumericos() {
 
+    if (this.correcta1) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.correcta2) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.correcta3) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.correcta4) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.correcta5) {
+      this.sistNumericoTotal++
+    }
+
+    if (!this.incorrecta1) {
+      this.sistNumericoTotal++
+    }
+
+    if (!this.incorrecta2) {
+      this.sistNumericoTotal++
+    }
+
+    if (!this.incorrecta3) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.sistNumFormGroup.controls['elegirMayor_2_10'].value == 10) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.sistNumFormGroup.controls['elegirMayor_2_6'].value == 6) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.sistNumFormGroup.controls['elegirMayor_4_5'].value == 5) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.sistNumFormGroup.controls['elegirMayor_8_7'].value == 8) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.sistNumFormGroup.controls['elegirMayor_9_3'].value == 9) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.sieteControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (!this.domingoControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.onceControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (!this.bicienControl) {
+      this.sistNumericoTotal++
+    }
     
+    if (!this.julioControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.cincoControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.setentaControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (!this.sesienteControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.treintaControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (this.catorceControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (!this.dinceControl) {
+      this.sistNumericoTotal++
+    }
+
+    if (!this.juevesControl) {
+      this.sistNumericoTotal++
+    }
+
+    this.objSistNumerico.pObtenido = this.sistNumericoTotal;
+
+    this.arrayTest.push(this.objSistNumerico)
 
   }
 
