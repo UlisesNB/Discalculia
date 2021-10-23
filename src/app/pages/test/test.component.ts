@@ -102,8 +102,6 @@ export class TestComponent implements OnInit {
   incorrecta2 = false;
   incorrecta3 = false;
 
-
-
   sistNumFormGroup = new FormGroup({
     elegirMayor_2_10: new FormControl('', Validators.required),
     elegirMayor_2_6: new FormControl('', Validators.required),
@@ -198,14 +196,49 @@ export class TestComponent implements OnInit {
     pObtenido: 0,
     indicador: null,
     observacion: null
-  }
+  };
 
+  objEnumerar = {
+    id_resultadoTest: null,
+    id_area: 1,
+    pObtenido: 0,
+    indicador: null,
+    observacion: null
+  };
 
-  
+  objSistNumerico = {
+    id_resultadoTest: null,
+    id_area: 1,
+    pObtenido: 0,
+    indicador: null,
+    observacion: null
+  };
+
+  objOperLogicas = {
+    id_resultadoTest: null,
+    id_area: 1,
+    pObtenido: 0,
+    indicador: null,
+    observacion: null
+  };
+
+  objOperaciones = {
+    id_resultadoTest: null,
+    id_area: 1,
+    pObtenido: 0,
+    indicador: null,
+    observacion: null
+  };
+
+  objEstimTamanho = {
+    id_resultadoTest: null,
+    id_area: 1,
+    pObtenido: 0,
+    indicador: null,
+    observacion: null
+  };
 
   constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {}
-
-
 
   ngOnInit(): void {}
 
@@ -257,15 +290,44 @@ export class TestComponent implements OnInit {
       this.contarTotal++;
     };
 
-    console.log('Total contar: ', this.contarTotal);
     this.objContar.pObtenido = this.contarTotal;
 
     this.arrayTest.push(this.objContar)
-    console.log('Resultado: ', this.arrayTest);
 
   }
 
+  analizarResultadosEnumerar() {
 
+    if (this.enumerarFormGroup.controls['corazones'].value == 9) {
+      this.enumerarTotal++;
+    };
+
+    if (this.enumerarFormGroup.controls['ratones'].value == 14) {
+      this.enumerarTotal++;
+    };
+
+    if (this.enumerarFormGroup.controls['dinosaurios'].value == 6) {
+      this.enumerarTotal++;
+    };
+
+    if (this.enumerarFormGroup.controls['aviones'].value == 9) {
+      this.enumerarTotal++;
+    };
+
+    if (this.enumerarFormGroup.controls['estrellas'].value == 10) {
+      this.enumerarTotal++;
+    };
+
+    this.objEnumerar.pObtenido = this.enumerarTotal;
+
+    this.arrayTest.push(this.objEnumerar)
+  }
+
+  analizarResultadossitemasNumericos() {
+
+    
+
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.items, event.previousIndex, event.currentIndex);
@@ -289,11 +351,8 @@ export class TestComponent implements OnInit {
     }, 2000)
   }
 
-
-
   verResultado() {
     console.log('Resultado: ', this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value);
   }
-
 
 }
