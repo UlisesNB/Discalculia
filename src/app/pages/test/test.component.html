@@ -1,4 +1,5 @@
 <mat-horizontal-stepper #stepper (selectionChange)="onStepChange($event)" >
+
     <mat-step [stepControl]="contarFormGroup" >
         <form [formGroup]="contarFormGroup">
             <ng-template matStepLabel></ng-template>
@@ -75,9 +76,8 @@
             <ng-template matStepLabel></ng-template>
             <div>
                 <div>
-                    <label class="titulo">Seleccione la imagen con mas elementos</label>
-                    <mat-radio-group aria-labelledby="example-radio-group-label"
-                        formControlName="respuestaSeleccionadaFrutas">
+                    <label class="titulo">Contar con un limite inferior</label>
+                    <div aria-labelledby="example-radio-group-label">
 
                         <div>
                             <h3>Cuenta a partir de 3 </h3>
@@ -163,7 +163,7 @@
                             <br><br><br>
                         </div> <br>
 
-                    </mat-radio-group>
+                    </div>
                 </div>
             </div>
             <div class="boton-next">

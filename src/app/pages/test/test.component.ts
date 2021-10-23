@@ -44,15 +44,12 @@ export class TestComponent implements OnInit {
     }
   ];
 
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.items, event.previousIndex, event.currentIndex);
-    console.log(this.items[0].title);
 
-  }
 
   contarFormGroup = new FormGroup ({
     respuestaSeleccionadaFrutas: new FormControl('', Validators.required),
     respuestaSeleccionadaArboles: new FormControl('', Validators.required),
+
     contar_3_1: new FormControl('', Validators.required),
     contar_3_2: new FormControl('', Validators.required),
     contar_3_3: new FormControl('', Validators.required),
@@ -186,32 +183,52 @@ export class TestComponent implements OnInit {
   contarArray: number[]
 
   //Contadores
-  contar: number;
-  enumerar: number;
-  sistNumerico: number;
+  contarTotal: number;
+  enumerarTotal: number;
+  sistNumericoTotal: number;
+  operLogicasTotal: number;
+  operacionesTotal: number;
+  estimTamanhoTotal: number;
+
+
   
-  puntajeTotal: number;
 
   constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {
     this.analizarResultados();
   }
 
-  onDrop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.items, event.previousIndex, event.currentIndex);
+
+
+  ngOnInit(): void { 
+    
   }
-
-
 
   analizarResultados() {
 
 
-    if (this.respuestaSeleccionadaArboles === '9') {
-      this.contar ++;
-    }
+    if (this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value == '9') {
+      this.contarTotal ++;
+    };
+
+    if (this.contarFormGroup.controls['respuestaSeleccionadaArboles'].value == '9') {
+      this.contarTotal ++;
+    };
+
+    if (this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value == '9') {
+      this.contarTotal ++;
+    };
+
+    if (this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value == '9') {
+      this.contarTotal ++;
+    };
+
+
   }
 
-  ngOnInit(): void { 
-    
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.items, event.previousIndex, event.currentIndex);
+    console.log(this.items[0].title);
+
   }
 
   onStepChange(evt: StepperSelectionEvent): void {
@@ -226,7 +243,6 @@ export class TestComponent implements OnInit {
     window.setTimeout(() => {
       this.ocultarImagen = false;
       this.mostrarOpciones = true;
-      console.log('ya?');
       this.ngOnInit()
     }, 2000)
   }
