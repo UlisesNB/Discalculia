@@ -1,13 +1,12 @@
 import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { TestService } from '../../services/test.service';
-import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
-import {StepperSelectionEvent, STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { StepperSelectionEvent, STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 import {
   CdkDragDrop,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
-import { $ } from 'protractor';
 
 
 @Component({
@@ -16,7 +15,7 @@ import { $ } from 'protractor';
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss'],
   providers: [{
-    provide: STEPPER_GLOBAL_OPTIONS, useValue: {showError: true}
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: { showError: true }
   }]
 })
 export class TestComponent implements OnInit {
@@ -44,9 +43,7 @@ export class TestComponent implements OnInit {
     }
   ];
 
-
-
-  contarFormGroup = new FormGroup ({
+  contarFormGroup = new FormGroup({
     respuestaSeleccionadaFrutas: new FormControl('', Validators.required),
     respuestaSeleccionadaArboles: new FormControl('', Validators.required),
 
@@ -54,30 +51,30 @@ export class TestComponent implements OnInit {
     contar_3_2: new FormControl('', Validators.required),
     contar_3_3: new FormControl('', Validators.required),
     contar_3_4: new FormControl('', Validators.required),
-  
+
     contar_7_1: new FormControl('', Validators.required),
     contar_7_2: new FormControl('', Validators.required),
     contar_7_3: new FormControl('', Validators.required),
     contar_7_4: new FormControl('', Validators.required),
-  
+
     contarLimInfSup_5_1: new FormControl('', Validators.required),
     contarLimInfSup_5_2: new FormControl('', Validators.required),
     contarLimInfSup_5_3: new FormControl('', Validators.required),
     contarLimInfSup_5_4: new FormControl('', Validators.required),
     contarLimInfSup_5_5: new FormControl('', Validators.required),
-  
+
     contarLimInfSup_4_1: new FormControl('', Validators.required),
     contarLimInfSup_4_2: new FormControl('', Validators.required),
     contarLimInfSup_4_3: new FormControl('', Validators.required),
     contarLimInfSup_4_4: new FormControl('', Validators.required),
     contarLimInfSup_4_5: new FormControl('', Validators.required),
-  
+
     contarAtras_7_1: new FormControl('', Validators.required),
     contarAtras_7_2: new FormControl('', Validators.required),
     contarAtras_7_3: new FormControl('', Validators.required),
     contarAtras_7_4: new FormControl('', Validators.required),
     contarAtras_7_5: new FormControl('', Validators.required),
-  
+
     contarAtras_15_1: new FormControl('', Validators.required),
     contarAtras_15_2: new FormControl('', Validators.required),
     contarAtras_15_3: new FormControl('', Validators.required),
@@ -87,10 +84,10 @@ export class TestComponent implements OnInit {
   });
 
   enumerarFormGroup = new FormGroup({
-    corazones:  new FormControl('', Validators.required), 
-    ratones:  new FormControl('', Validators.required),
-    dinosaurios:  new FormControl('', Validators.required),
-    aviones:  new FormControl('', Validators.required),
+    corazones: new FormControl('', Validators.required),
+    ratones: new FormControl('', Validators.required),
+    dinosaurios: new FormControl('', Validators.required),
+    aviones: new FormControl('', Validators.required),
     estrellas: new FormControl('', Validators.required),
   });
 
@@ -110,77 +107,57 @@ export class TestComponent implements OnInit {
     elegirMayor_4_5: new FormControl('', Validators.required),
     elegirMayor_8_7: new FormControl('', Validators.required),
     elegirMayor_9_3: new FormControl('', Validators.required),
+  });
 
-    // sieteControl: new FormControl('', Validators.required),
-    // domingoControl: new FormControl('', Validators.required),
-    // onceControl: new FormControl('', Validators.required),
-    // bicienControl: new FormControl('', Validators.required),
-    // julioControl: new FormControl('', Validators.required),
-    // cincoControl: new FormControl('', Validators.required),
-    // setentaControl: new FormControl('', Validators.required),
-    // sesienteControl: new FormControl('', Validators.required),
-    // treintaControl: new FormControl('', Validators.required),
-    // catorceControl: new FormControl('', Validators.required),
-    // dinceControl: new FormControl('', Validators.required),
-    // juevesControl: new FormControl('', Validators.required),
+  sieteControl = false;
+  domingoControl = false;
+  onceControl = false;
+  bicienControl = false;
+  julioControl = false;
+  cincoControl = false;
+  setentaControl = false;
+  sesienteControl = false;
+  treintaControl = false;
+  catorceControl = false;
+  dinceControl = false;
+  juevesControl = false;
 
+  operacionesLogicas = new FormGroup({
+    controlPiezas: new FormControl('', Validators.required),
+    controlCartaMenosOcho: new FormControl('', Validators.required),
+    controlCartaMenosCuatro: new FormControl('', Validators.required),
+    controlCartaMenosSiete: new FormControl('', Validators.required),
+
+    controlRellenarCuatro: new FormControl('', Validators.required),
+    controlRellenarMenosCuatro: new FormControl('', Validators.required),
+    controlRellenarTres: new FormControl('', Validators.required),
+    controlRellenarSiete: new FormControl('', Validators.required),
+    controlRellenarDoce: new FormControl('', Validators.required),
+    controlRellenarNueve: new FormControl('', Validators.required),
+    controlRellenarResultCuatro: new FormControl('', Validators.required),
+    controlRellenarVeinteYOcho: new FormControl('', Validators.required),
 
   });
 
-    sieteControl = false; 
-    domingoControl = false; 
-    onceControl = false; 
-    bicienControl = false; 
-    julioControl = false; 
-    cincoControl = false; 
-    setentaControl = false; 
-    sesienteControl = false; 
-    treintaControl = false; 
-    catorceControl = false; 
-    dinceControl = false; 
-    juevesControl = false; 
+  operaciones = new FormGroup({
+    controlGlobos: new FormControl('', Validators.required),
+    controlLapices: new FormControl('', Validators.required),
+    controlConejos: new FormControl('', Validators.required),
+    controlPelotas: new FormControl('', Validators.required),
+    controlFlores: new FormControl('', Validators.required),
+    controlSumasUno: new FormControl('', Validators.required),
+    controlSumasDos: new FormControl('', Validators.required),
+    controlSumasTres: new FormControl('', Validators.required),
+    ControlSumasCuatro: new FormControl('', Validators.required),
+    ControlSumasCinco: new FormControl('', Validators.required),
+  });
 
-    operacionesLogicas = new FormGroup({
-      controlPiezas: new FormControl('', Validators.required),
-      controlCartaMenosOcho: new FormControl('', Validators.required),
-      controlCartaMenosCuatro: new FormControl('', Validators.required),
-      controlCartaMenosSiete: new FormControl('', Validators.required),
+  estimacion = new FormGroup({
+    controlEjercicioUno: new FormControl('', Validators.required),
+  });
 
-      controlRellenarCuatro: new FormControl('', Validators.required),
-      controlRellenarMenosCuatro: new FormControl('', Validators.required),
-      controlRellenarTres: new FormControl('', Validators.required),
-      controlRellenarSiete: new FormControl('', Validators.required),
-      controlRellenarDoce: new FormControl('', Validators.required),
-      controlRellenarNueve: new FormControl('', Validators.required),
-      controlRellenarResultCuatro: new FormControl('', Validators.required),
-      controlRellenarVeinteYOcho: new FormControl('', Validators.required),
-
-    });
-    
-    operaciones = new FormGroup({
-      controlGlobos: new FormControl('', Validators.required),
-      controlLapices: new FormControl('', Validators.required),
-      controlConejos: new FormControl('', Validators.required),
-      controlPelotas: new FormControl('', Validators.required),
-      controlFlores: new FormControl('', Validators.required),
-      controlSumasUno: new FormControl('', Validators.required),
-      controlSumasDos: new FormControl('', Validators.required),
-      controlSumasTres: new FormControl('', Validators.required),
-      ControlSumasCuatro: new FormControl('', Validators.required),
-      ControlSumasCinco: new FormControl('', Validators.required),
-    });
-
-    estimacion = new FormGroup({
-      controlEjercicioUno: new FormControl('', Validators.required),
-    });
-
-    ocultarImagen: boolean = true;
-    mostrarOpciones: boolean = false;
-
-
-  respuestaSeleccionadaArboles: string;
-
-  contarArray: number[]
+  ocultarImagen: boolean = true;
+  mostrarOpciones: boolean = false;
 
   //Contadores
   contarTotal: number = 0;
@@ -240,36 +217,36 @@ export class TestComponent implements OnInit {
     observacion: null
   };
 
-  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {}
+  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   analizarResultadosContar() {
 
     if (this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value == '9') {
-      this.contarTotal ++;
+      this.contarTotal++;
     };
 
     if (this.contarFormGroup.controls['respuestaSeleccionadaArboles'].value == '9') {
-      this.contarTotal ++;
+      this.contarTotal++;
     };
 
     if (this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value == '9') {
-      this.contarTotal ++;
+      this.contarTotal++;
     };
 
-    if (this.contarFormGroup.controls['contar_3_1'].value == 4 && this.contarFormGroup.controls['contar_3_2'].value == 5 
+    if (this.contarFormGroup.controls['contar_3_1'].value == 4 && this.contarFormGroup.controls['contar_3_2'].value == 5
       && this.contarFormGroup.controls['contar_3_3'].value == 6 && this.contarFormGroup.controls['contar_3_4'].value == 7) {
-      this.contarTotal ++;
+      this.contarTotal++;
     };
 
-    if (this.contarFormGroup.controls['contar_7_1'].value == 8 && this.contarFormGroup.controls['contar_7_2'].value == 9 
+    if (this.contarFormGroup.controls['contar_7_1'].value == 8 && this.contarFormGroup.controls['contar_7_2'].value == 9
       && this.contarFormGroup.controls['contar_7_3'].value == 10 && this.contarFormGroup.controls['contar_7_4'].value == 11) {
       this.contarTotal++;
     };
 
     if (this.contarFormGroup.controls['contarLimInfSup_5_1'].value == 5 && this.contarFormGroup.controls['contarLimInfSup_5_2'].value == 6
-      && this.contarFormGroup.controls['contarLimInfSup_5_3'].value == 7 && this.contarFormGroup.controls['contarLimInfSup_5_4'].value == 8 
+      && this.contarFormGroup.controls['contarLimInfSup_5_3'].value == 7 && this.contarFormGroup.controls['contarLimInfSup_5_4'].value == 8
       && this.contarFormGroup.controls['contarLimInfSup_5_5'].value == 9) {
       this.contarTotal++;
     };
@@ -394,7 +371,7 @@ export class TestComponent implements OnInit {
     if (!this.bicienControl) {
       this.sistNumericoTotal++
     }
-    
+
     if (!this.julioControl) {
       this.sistNumericoTotal++
     }
@@ -429,9 +406,9 @@ export class TestComponent implements OnInit {
 
     this.objSistNumerico.pObtenido = this.sistNumericoTotal;
 
-    this.arrayTest.push(this.objSistNumerico)
+    this.arrayTest.push(this.objSistNumerico);
 
-  }
+  };
 
   analizarResultadosOperacionesLogicas() {
 
@@ -439,10 +416,10 @@ export class TestComponent implements OnInit {
       const item = this.items[i];
 
       console.log('Array: ', item.orden);
-      
+
     }
 
-    if (this.items[0].orden == 1 && this.items[1].orden == 2 && this.items[2].orden == 3 && this.items[3].orden == 4 && this.items[4].orden == 5 ) {
+    if (this.items[0].orden == 1 && this.items[1].orden == 2 && this.items[2].orden == 3 && this.items[3].orden == 4 && this.items[4].orden == 5) {
       console.log('Entro?');
       this.operLogicasTotal++;
     };
@@ -495,27 +472,73 @@ export class TestComponent implements OnInit {
       this.operLogicasTotal++;
     };
 
-    
+
     this.objOperLogicas.pObtenido = this.operLogicasTotal;
 
     this.arrayTest.push(this.objOperLogicas);
 
-    console.log('Operaciones Logicas: ', this.operLogicasTotal);
+  };
 
-  }
+  analizarResultadosOperaciones() {
+
+    if (this.operaciones.controls['controlGlobos'].value == 5) {
+      this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlLapices'].value == 6) {
+      this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlConejos'].value == 8) {
+      this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlPelotas'].value == 9) {
+      this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlFlores'].value == 6) {
+      this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlSumasUno'].value == 4) {
+      this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlSumasDos'].value == 8) {
+    this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlSumasTres'].value == 9) {
+      this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlSumasCuatro'].value == 3) {
+      this.operacionesTotal++
+    };
+
+    if (this.operaciones.controls['controlSumasCinco'].value == 8) {
+      this.operacionesTotal++
+    };
+
+    this.objOperaciones.pObtenido = this.operacionesTotal;
+
+    this.arrayTest.push(this.objOperaciones);
+
+  };
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.items, event.previousIndex, event.currentIndex);
     console.log(this.items[0].orden);
 
-  }
+  };
 
   onStepChange(evt: StepperSelectionEvent): void {
     console.log('Id del step', evt.selectedIndex);
-    if(evt.selectedIndex == 21) {
+    if (evt.selectedIndex == 21) {
       this.hide();
-    }
-  }
+    };
+  };
 
   hide() {
     console.log('se llama');
@@ -524,10 +547,5 @@ export class TestComponent implements OnInit {
       this.mostrarOpciones = true;
       this.ngOnInit()
     }, 2000)
-  }
-
-  verResultado() {
-    console.log('Resultado: ', this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value);
-  }
-
+  };
 }
