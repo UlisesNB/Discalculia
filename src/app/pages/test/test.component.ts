@@ -190,11 +190,17 @@ export class TestComponent implements OnInit {
   operacionesTotal: number;
   estimTamanhoTotal: number;
 
+  arrayTest = [];
+
+  objContar = {
+    
+  }
+
 
   
 
   constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {
-    this.analizarResultados();
+    this.analizarResultadosContar();
   }
 
 
@@ -203,8 +209,7 @@ export class TestComponent implements OnInit {
     
   }
 
-  analizarResultados() {
-
+  analizarResultadosContar() {
 
     if (this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value == '9') {
       this.contarTotal ++;
@@ -228,14 +233,33 @@ export class TestComponent implements OnInit {
       this.contarTotal++;
     };
 
-    if (this.contarFormGroup.controls['contar_7_1'].value == 8 && this.contarFormGroup.controls['contar_7_2'].value == 9
-      && this.contarFormGroup.controls['contar_7_3'].value == 10 && this.contarFormGroup.controls['contar_7_4'].value == 11) {
+    if (this.contarFormGroup.controls['contarLimInfSup_5_1'].value == 5 && this.contarFormGroup.controls['contarLimInfSup_5_2'].value == 6
+      && this.contarFormGroup.controls['contarLimInfSup_5_3'].value == 7 && this.contarFormGroup.controls['contarLimInfSup_5_4'].value == 8 
+      && this.contarFormGroup.controls['contarLimInfSup_5_5'].value == 9) {
       this.contarTotal++;
     };
 
+    if (this.contarFormGroup.controls['contarLimInfSup_4_1'].value == 4 && this.contarFormGroup.controls['contarLimInfSup_4_2'].value == 5
+      && this.contarFormGroup.controls['contarLimInfSup_4_3'].value == 6 && this.contarFormGroup.controls['contarLimInfSup_4_4'].value == 7
+      && this.contarFormGroup.controls['contarLimInfSup_4_5'].value == 8) {
+      this.contarTotal++;
+    };
 
+    if (this.contarFormGroup.controls['contarAtras_7_1'].value == 7 && this.contarFormGroup.controls['contarAtras_7_2'].value == 6
+      && this.contarFormGroup.controls['contarAtras_7_3'].value == 5 && this.contarFormGroup.controls['contarAtras_7_4'].value == 4
+      && this.contarFormGroup.controls['contarAtras_7_5'].value == 3) {
+      this.contarTotal++;
+    };
+
+    if (this.contarFormGroup.controls['contarAtras_15_1'].value == 15 && this.contarFormGroup.controls['contarAtras_15_2'].value == 14
+      && this.contarFormGroup.controls['contarAtras_15_3'].value == 13 && this.contarFormGroup.controls['contarAtras_15_4'].value == 12
+      && this.contarFormGroup.controls['contarAtras_15_5'].value == 11) {
+      this.contarTotal++;
+    };
 
   }
+
+
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.items, event.previousIndex, event.currentIndex);
