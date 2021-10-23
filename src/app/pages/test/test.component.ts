@@ -20,6 +20,14 @@ import {
 })
 export class TestComponent implements OnInit {
 
+  mostrarStep: boolean = false;
+
+  mostrarAlumno: boolean = true;
+
+  documento: string = '';
+
+  alumnoJson: any;
+
   items = [
     {
       orden: 2,
@@ -531,6 +539,19 @@ export class TestComponent implements OnInit {
     if (this.estimacion.controls['controlEjercicioUno'].value == 18) {
       
     }
+  };
+
+  buscarAlumno(documento: string) {
+    this,this.testService.getAlumnoProfesor(documento)
+    .subscribe(
+      res  => {
+        console.log('Respuesta del servidor: ', res);
+        this.alumnoJson = JSON.parse(JSON.stringify(res))
+        console.log('Datos del alumno: ', this.alumnoJson);
+        this.showTest();
+      },
+      err => console.log(err)
+    )
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -545,6 +566,14 @@ export class TestComponent implements OnInit {
       this.hide();
     };
   };
+
+  showTest() {
+    window.setTimeout(() => {
+      this.mostrarAlumno = false;
+      this.mostrarStep = true;
+      this.ngOnInit()
+    }, 1000)
+  }
 
   hide() {
     console.log('se llama');

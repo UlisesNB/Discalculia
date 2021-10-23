@@ -1,4 +1,15 @@
-<mat-horizontal-stepper #stepper (selectionChange)="onStepChange($event)" >
+<form action="" class="container" (ngSubmit)="buscarAlumno(documento)" *ngIf="mostrarAlumno" id="formAlumno">
+    <div class="container">
+        <div class="container">
+            <input type="text" [(ngModel)]="documento">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block login-button" id="botonForm">
+        Iniciar Test
+      </button></form>
+
+
+<mat-horizontal-stepper #stepper (selectionChange)="onStepChange($event)" *ngIf="mostrarStep" id="testAlumno">
 
     <mat-step [stepControl]="contarFormGroup" >
         <form [formGroup]="contarFormGroup">

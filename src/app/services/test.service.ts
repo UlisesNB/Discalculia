@@ -22,6 +22,10 @@ export class TestService {
     return this.http.get(`${this._url}UserProfile/${id}`);
   }
 
+  getAlumnoProfesor(doc: string) {
+    return this.http.get(`${this._url}AlumnoDelProfesor/${doc}`);
+  }
+
 
 
 
