@@ -23,23 +23,23 @@ export class TestComponent implements OnInit {
 
   items = [
     {
-      title: '2',
+      orden: 2,
       img: '/assets/dos-estrellas.jpg'
     },
     {
-      title: '5',
+      orden: 5,
       img: '/assets/cinco-estrellas.jpg'
     },
     {
-      title: '4',
+      orden: 4,
       img: '/assets/cuatro-estrellas.jpg'
     },
     {
-      title: '1',
+      orden: 1,
       img: '/assets/una-estrella.jpg'
     },
     {
-      title: '3',
+      orden: 3,
       img: '/assets/tres-estrellas.png'
     }
   ];
@@ -433,9 +433,71 @@ export class TestComponent implements OnInit {
 
   }
 
+  analizarResultadosOperacionesLogicas() {
+    if (this.items[0].orden == 1 && this.items[1].orden == 2 && this.items[2].orden == 3 && this.items[3].orden == 4 && this.items[4].orden == 5 ) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlPiezas'].value == 6) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlCartaMenosOcho'].value == 'no') {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlCartaMenosCuatro'].value == 'si') {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlCartaMenosSiete'].value == 'no') {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlRellenarCuatro'].value == 4) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlRellenarMenosCuatro'].value == 4) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlRellenarTres'].value == 3) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlRellenarSiete'].value == 7) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlRellenarDoce'].value == 12) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlRellenarNueve'].value == 9) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlRellenarresultCuatro'].value == 4) {
+      this.operLogicasTotal++;
+    }
+
+    if (this.operacionesLogicas.controls['controlRellenarVeinteYOcho'].value == 28) {
+      this.operLogicasTotal++;
+    }
+
+    
+    this.objOperLogicas.pObtenido = this.operLogicasTotal;
+
+    this.arrayTest.push(this.objOperLogicas);
+
+    console.log('Operaciones Logicas: ', this.operLogicasTotal);
+
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.items, event.previousIndex, event.currentIndex);
-    console.log(this.items[0].title);
+    console.log(this.items[0].orden);
 
   }
 
