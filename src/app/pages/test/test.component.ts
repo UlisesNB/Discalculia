@@ -147,13 +147,13 @@ export class TestComponent implements OnInit {
       controlCartaMenosSiete: new FormControl('', Validators.required),
 
       controlRellenarCuatro: new FormControl('', Validators.required),
-      controllRellenarMenosCuatro: new FormControl('', Validators.required),
-      controllRellenarTres: new FormControl('', Validators.required),
-      controllRellenarSiete: new FormControl('', Validators.required),
-      controllRellenarDoce: new FormControl('', Validators.required),
-      controllRellenarNueve: new FormControl('', Validators.required),
-      controllRellenarResultCuatro: new FormControl('', Validators.required),
-      controllRellenarVenteYOcho: new FormControl('', Validators.required),
+      controlRellenarMenosCuatro: new FormControl('', Validators.required),
+      controlRellenarTres: new FormControl('', Validators.required),
+      controlRellenarSiete: new FormControl('', Validators.required),
+      controlRellenarDoce: new FormControl('', Validators.required),
+      controlRellenarNueve: new FormControl('', Validators.required),
+      controlRellenarResultCuatro: new FormControl('', Validators.required),
+      controlRellenarVeinteYOcho: new FormControl('', Validators.required),
 
     });
     
@@ -434,57 +434,66 @@ export class TestComponent implements OnInit {
   }
 
   analizarResultadosOperacionesLogicas() {
-    if (this.items[0].orden == 1 && this.items[1].orden == 2 && this.items[2].orden == 3 && this.items[3].orden == 4 && this.items[4].orden == 5 ) {
-      this.operLogicasTotal++;
+
+    for (let i = 0; i < this.items.length; i++) {
+      const item = this.items[i];
+
+      console.log('Array: ', item.orden);
+      
     }
+
+    if (this.items[0].orden == 1 && this.items[1].orden == 2 && this.items[2].orden == 3 && this.items[3].orden == 4 && this.items[4].orden == 5 ) {
+      console.log('Entro?');
+      this.operLogicasTotal++;
+    };
 
     if (this.operacionesLogicas.controls['controlPiezas'].value == 6) {
       this.operLogicasTotal++;
-    }
+    };
 
-    if (this.operacionesLogicas.controls['controlCartaMenosOcho'].value == 'no') {
+    if (this.operacionesLogicas.controls['controlCartaMenosOcho'].value == 0) {
       this.operLogicasTotal++;
-    }
+    };
 
-    if (this.operacionesLogicas.controls['controlCartaMenosCuatro'].value == 'si') {
+    if (this.operacionesLogicas.controls['controlCartaMenosCuatro'].value == 1) {
       this.operLogicasTotal++;
-    }
+    };
 
-    if (this.operacionesLogicas.controls['controlCartaMenosSiete'].value == 'no') {
+    if (this.operacionesLogicas.controls['controlCartaMenosSiete'].value == 0) {
       this.operLogicasTotal++;
-    }
+    };
 
     if (this.operacionesLogicas.controls['controlRellenarCuatro'].value == 4) {
       this.operLogicasTotal++;
-    }
+    };
 
     if (this.operacionesLogicas.controls['controlRellenarMenosCuatro'].value == 4) {
       this.operLogicasTotal++;
-    }
+    };
 
     if (this.operacionesLogicas.controls['controlRellenarTres'].value == 3) {
       this.operLogicasTotal++;
-    }
+    };
 
     if (this.operacionesLogicas.controls['controlRellenarSiete'].value == 7) {
       this.operLogicasTotal++;
-    }
+    };
 
     if (this.operacionesLogicas.controls['controlRellenarDoce'].value == 12) {
       this.operLogicasTotal++;
-    }
+    };
 
     if (this.operacionesLogicas.controls['controlRellenarNueve'].value == 9) {
       this.operLogicasTotal++;
-    }
+    };
 
-    if (this.operacionesLogicas.controls['controlRellenarresultCuatro'].value == 4) {
+    if (this.operacionesLogicas.controls['controlRellenarResultCuatro'].value == 4) {
       this.operLogicasTotal++;
-    }
+    };
 
     if (this.operacionesLogicas.controls['controlRellenarVeinteYOcho'].value == 28) {
       this.operLogicasTotal++;
-    }
+    };
 
     
     this.objOperLogicas.pObtenido = this.operLogicasTotal;

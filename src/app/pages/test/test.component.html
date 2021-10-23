@@ -575,11 +575,11 @@
                         </label>
                         <div>
                             Si
-                            <mat-radio-button value="si"></mat-radio-button>
+                            <mat-radio-button value="1"></mat-radio-button>
                         </div>
                         <div>
                             No
-                            <mat-radio-button value="no"></mat-radio-button>
+                            <mat-radio-button value="0"></mat-radio-button>
                         </div>
 
                     </mat-radio-group>
@@ -590,11 +590,11 @@
                         </label>
                         <div>
                             Si
-                            <mat-radio-button value="si"></mat-radio-button>
+                            <mat-radio-button value="1"></mat-radio-button>
                         </div>
                         <div>
                             No
-                            <mat-radio-button value="no"></mat-radio-button>
+                            <mat-radio-button value="0"></mat-radio-button>
                         </div>
 
                     </mat-radio-group>
@@ -605,15 +605,14 @@
                         </label>
                         <div>
                             Si
-                            <mat-radio-button value="si"></mat-radio-button>
+                            <mat-radio-button value="1"></mat-radio-button>
                         </div>
                         <div>
                             No
-                            <mat-radio-button value="no"></mat-radio-button>
+                            <mat-radio-button value="0"></mat-radio-button>
                         </div>
 
                     </mat-radio-group>
-                    <div>La respuesta es: {{operacionesLogicas.controls['controlPiezas'].value}}</div>
 
                 </div>
             </div>
@@ -637,35 +636,35 @@
                         <input class="numeros" type="number" value="8" disabled> <br> <br>
 
                         <input class="numeros" type="number" value="7" disabled> <span class="signos"> - </span>
-                        <input class="numeros" type="number" formControlName="controllRellenarMenosCuatro"> <span
+                        <input class="numeros" type="number" formControlName="controlRellenarMenosCuatro"> <span
                             class="signos"> = </span>
                         <input class="numeros" type="number" value="3" disabled> <br><br>
 
-                        <input class="numeros" type="number" formControlName="controllRellenarTres"> <span
+                        <input class="numeros" type="number" formControlName="controlRellenarTres"> <span
                             class="signos"> + </span>
                         <input class="numeros" type="number" value="3" disabled> <span class="signos"> = </span>
                         <input class="numeros" type="number" value="6" disabled> <br><br>
 
-                        <input class="numeros" type="number" formControlName="controllRellenarSiete"> <span
+                        <input class="numeros" type="number" formControlName="controlRellenarSiete"> <span
                             class="signos"> - </span>
                         <input class="numeros" type="number" value="2" disabled> <span class="signos"> = </span>
                         <input class="numeros" type="number" value="5" disabled> <br><br>
 
                         <input class="numeros" type="number" value="16" disabled> <span class="signos"> - </span>
                         <input class="numeros" type="number" value="4" disabled> <span class="signos"> = </span>
-                        <input class="numeros" type="number" formControlName="controllRellenarDoce"> <br><br>
+                        <input class="numeros" type="number" formControlName="controlRellenarDoce"> <br><br>
 
                         <input class="numeros" type="number" value="6" disabled> <span class="signos"> + </span>
                         <input class="numeros" type="number" value="3" disabled> <span class="signos"> = </span>
-                        <input class="numeros" type="number" formControlName="controllRellenarNueve"> <br><br>
+                        <input class="numeros" type="number" formControlName="controlRellenarNueve"> <br><br>
 
                         <input class="numeros" type="number" value="9" disabled> <span class="signos"> - </span>
                         <input class="numeros" type="number" value="5" disabled> <span class="signos"> = </span>
-                        <input class="numeros" type="number" formControlName="controllRellenarResultCuatro"> <br><br>
+                        <input class="numeros" type="number" formControlName="controlRellenarResultCuatro"> <br><br>
 
                         <input class="numeros" type="number" value="20" disabled> <span class="signos"> + </span>
                         <input class="numeros" type="number" value="8" disabled> <span class="signos"> = </span>
-                        <input class="numeros" type="number" formControlName="controllRellenarVenteYOcho"> <br><br>
+                        <input class="numeros" type="number" formControlName="controlRellenarVeinteYOcho"> <br><br>
 
 
                     </div> <br>
@@ -674,7 +673,7 @@
                 </div>
             </div>
             <div class="boton-next">
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                <button mat-raised-button color="primary" matStepperNext (click)="analizarResultadosOperacionesLogicas()">Siguiente</button>
             </div>
         </form>
     </mat-step>
