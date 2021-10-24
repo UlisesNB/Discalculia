@@ -569,9 +569,20 @@ export class TestComponent implements OnInit {
 
   showTest() {
     window.setTimeout(() => {
+      let alumno: any = document.getElementById("formAlumno");
+      let test: any = document.getElementById("testAlumno");
       this.mostrarAlumno = false;
       this.mostrarStep = true;
-      this.ngOnInit()
+      if (!this.mostrarAlumno) {
+        console.log('Alumno ', alumno);
+        alumno.style.opacity = 0;
+      };
+
+      if (this.mostrarStep) {
+        console.log('entra?', test);
+        test.style.opacity = 1;
+      };
+
     }, 1000)
   }
 
