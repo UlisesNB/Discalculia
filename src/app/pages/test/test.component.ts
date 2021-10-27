@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, Input } from '@angular/core';
 import { TestService } from '../../services/test.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { StepperSelectionEvent, STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
@@ -7,8 +7,6 @@ import {
   CdkDragDrop,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
-
-
 @Component({
   selector: 'app-test',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,7 +18,10 @@ import {
 })
 export class TestComponent implements OnInit {
 
-  mostrarStep: boolean = false;
+  isLinear = true;
+  mostrarStep: boolean = true;
+
+  variable: boolean = false;
 
   mostrarAlumno: boolean = true;
 
@@ -50,6 +51,10 @@ export class TestComponent implements OnInit {
       img: '/assets/tres-estrellas.png'
     }
   ];
+
+  alumnoFormGroup = new FormGroup({
+    documentoControl: new FormControl('', Validators.required),
+  })
 
   contarFormGroup = new FormGroup({
     respuestaSeleccionadaFrutas: new FormControl('', Validators.required),
@@ -162,10 +167,31 @@ export class TestComponent implements OnInit {
 
   estimacion = new FormGroup({
     controlEjercicioUno: new FormControl('', Validators.required),
+    controlEjercicioDos: new FormControl('', Validators.required),
+    controlEjercicioTres: new FormControl('', Validators.required),
+    controlEjercicioCuatro: new FormControl('', Validators.required),
+    controlEjercicioCinco: new FormControl('', Validators.required),
+    controlEjercicioSeis: new FormControl('', Validators.required),
+
   });
 
-  ocultarImagen: boolean = true;
-  mostrarOpciones: boolean = false;
+  ocultarImagenUno: boolean = true;
+  mostrarOpcionesUno: boolean = false;
+
+  ocultarImagenDos: boolean = true;
+  mostrarOpcionesDos: boolean = false;
+
+  ocultarImagenTres: boolean = true;
+  mostrarOpcionesTres: boolean = false;
+
+  ocultarImagenCuatro: boolean = true;
+  mostrarOpcionesCuatro: boolean = false;
+
+  ocultarImagenCinco: boolean = true;
+  mostrarOpcionesCinco: boolean = false;
+
+  ocultarImagenSeis: boolean = true;
+  mostrarOpcionesSeis: boolean = false;
 
   //Contadores
   contarTotal: number = 0;
@@ -176,6 +202,14 @@ export class TestComponent implements OnInit {
   estimTamanhoTotal: number = 0;
 
   arrayTest: any[] = [];
+
+  resultadoTest = {
+    id: null,
+    id_alumno: null,
+    id_profesor: null,
+    indicador: null,
+    observacion: null
+  };
 
   objContar = {
     id_resultadoTest: null,
@@ -225,7 +259,7 @@ export class TestComponent implements OnInit {
     observacion: null
   };
 
-  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef) { }
+  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef, private detector: ChangeDetectorRef) { }
 
   ngOnInit(): void { }
 
@@ -279,6 +313,8 @@ export class TestComponent implements OnInit {
 
     this.objContar.pObtenido = this.contarTotal;
 
+    this.objContar.id_resultadoTest = this.resultadoTest.id
+
     this.arrayTest.push(this.objContar)
 
   }
@@ -306,6 +342,8 @@ export class TestComponent implements OnInit {
     };
 
     this.objEnumerar.pObtenido = this.enumerarTotal;
+
+    this.objEnumerar.id_resultadoTest = this.resultadoTest.id
 
     this.arrayTest.push(this.objEnumerar)
   }
@@ -414,18 +452,13 @@ export class TestComponent implements OnInit {
 
     this.objSistNumerico.pObtenido = this.sistNumericoTotal;
 
+    this.objSistNumerico.id_resultadoTest = this.resultadoTest.id
+
     this.arrayTest.push(this.objSistNumerico);
 
   };
 
   analizarResultadosOperacionesLogicas() {
-
-    for (let i = 0; i < this.items.length; i++) {
-      const item = this.items[i];
-
-      console.log('Array: ', item.orden);
-
-    }
 
     if (this.items[0].orden == 1 && this.items[1].orden == 2 && this.items[2].orden == 3 && this.items[3].orden == 4 && this.items[4].orden == 5) {
       console.log('Entro?');
@@ -483,6 +516,8 @@ export class TestComponent implements OnInit {
 
     this.objOperLogicas.pObtenido = this.operLogicasTotal;
 
+    this.objOperLogicas.id_resultadoTest = this.resultadoTest.id
+
     this.arrayTest.push(this.objOperLogicas);
 
   };
@@ -514,7 +549,7 @@ export class TestComponent implements OnInit {
     };
 
     if (this.operaciones.controls['controlSumasDos'].value == 8) {
-    this.operacionesTotal++
+      this.operacionesTotal++
     };
 
     if (this.operaciones.controls['controlSumasTres'].value == 9) {
@@ -531,28 +566,89 @@ export class TestComponent implements OnInit {
 
     this.objOperaciones.pObtenido = this.operacionesTotal;
 
+    this.objOperaciones.id_resultadoTest = this.resultadoTest.id
+
     this.arrayTest.push(this.objOperaciones);
 
   };
 
   analizarResultadosEstimTamanho() {
     if (this.estimacion.controls['controlEjercicioUno'].value == 18) {
-      
-    }
+      this.estimTamanhoTotal++;
+    };
+
+    if (this.estimacion.controls['controlEjercicioDos'].value == 11) {
+      this.estimTamanhoTotal++;
+    };
+
+    if (this.estimacion.controls['controlEjercicioTres'].value == 12) {
+      this.estimTamanhoTotal++;
+    };
+
+    if (this.estimacion.controls['controlEjercicioCuatro'].value == 3) {
+      this.estimTamanhoTotal++;
+    };
+
+    if (this.estimacion.controls['controlEjercicioCinco'].value == 3) {
+      this.estimTamanhoTotal++;
+    };
+
+    if (this.estimacion.controls['controlEjercicioSeis'].value == 4) {
+      this.estimTamanhoTotal++;
+    };
+
+    this.objEstimTamanho.pObtenido = this.operacionesTotal;
+
+    this.objEstimTamanho.id_resultadoTest = this.resultadoTest.id
+
+    this.arrayTest.push(this.objEstimTamanho);
+
   };
 
-  buscarAlumno(documento: string) {
-    this,this.testService.getAlumnoProfesor(documento)
-    .subscribe(
-      res  => {
-        console.log('Respuesta del servidor: ', res);
-        this.alumnoJson = JSON.parse(JSON.stringify(res))
-        console.log('Datos del alumno: ', this.alumnoJson);
-        this.showTest();
-      },
-      err => console.log(err)
-    )
+  async buscarAlumno(documento: string) {
+    await this.testService.getAlumnoProfesor(documento)
+      .subscribe(
+        res => {
+          this.alumnoJson = JSON.parse(JSON.stringify(res))
+          this.isLinear = false;
+          this.hideForm();
+
+          this.resultadoTest.id_alumno = this.alumnoJson.id_alumno.id;
+          this.resultadoTest.id_profesor = this.alumnoJson.id_profesor.id;
+
+          this.guardarResultadoTest(this.resultadoTest);
+
+        },
+        err => console.log(err)
+      );
+
+  };
+
+  guardarResultadoTest(resultadoTest: any) {
+    this.testService.postResultadoTest(resultadoTest)
+      .subscribe(
+        res => {
+          console.log('Respuesta del servidor: ', res);
+          let respuesta: any;
+          respuesta = JSON.parse(JSON.stringify(res))
+
+          this.resultadoTest = respuesta;
+
+          console.log('Nuevo resultadoTest: ', this.resultadoTest);
+        },
+        err => console.log(err)
+      );
+  };
+
+  hideForm() {
+    console.log('se llama');
+    window.setTimeout(() => {
+      this.mostrarAlumno = false;
+      this.detector.detectChanges();
+    }, 0)
   }
+
+
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.items, event.previousIndex, event.currentIndex);
@@ -560,38 +656,69 @@ export class TestComponent implements OnInit {
 
   };
 
-  onStepChange(evt: StepperSelectionEvent): void {
+  onStepChange(evt: StepperSelectionEvent) {
     console.log('Id del step', evt.selectedIndex);
+
     if (evt.selectedIndex == 21) {
-      this.hide();
+      setTimeout(() => {
+        this.ocultarImagenUno = false;
+        this.mostrarOpcionesUno = true;
+        this.detector.detectChanges();
+      }, 6000);
     };
+
+    if (evt.selectedIndex == 22) {
+      setTimeout(() => {
+        this.ocultarImagenDos = false;
+        this.mostrarOpcionesDos = true;
+        this.detector.detectChanges();
+      }, 8000);
+    };
+
+    if (evt.selectedIndex == 23) {
+      window.setTimeout(() => {
+        this.ocultarImagenTres = false;
+        this.mostrarOpcionesTres = true;
+        this.detector.detectChanges();
+      }, 8000);    
+    };
+
+    if (evt.selectedIndex == 24) {
+      window.setTimeout(() => {
+        this.ocultarImagenCuatro = false;
+        this.mostrarOpcionesCuatro = true;
+        this.detector.detectChanges();
+
+      }, 8000);
+    };
+
+    if (evt.selectedIndex == 25) {
+      window.setTimeout(() => {
+        this.ocultarImagenCinco = false;
+        this.mostrarOpcionesCinco = true;
+        this.detector.detectChanges();
+      }, 8000);
+    };
+
+    if (evt.selectedIndex == 26) {
+      window.setTimeout(() => {
+        this.ocultarImagenSeis = false;
+        this.mostrarOpcionesSeis = true;
+        this.detector.detectChanges();
+      }, 8000);
+    };
+
   };
 
-  showTest() {
-    window.setTimeout(() => {
-      let alumno: any = document.getElementById("formAlumno");
-      let test: any = document.getElementById("testAlumno");
-      this.mostrarAlumno = false;
-      this.mostrarStep = true;
-      if (!this.mostrarAlumno) {
-        console.log('Alumno ', alumno);
-        alumno.style.opacity = 0;
-      };
-
-      if (this.mostrarStep) {
-        console.log('entra?', test);
-        test.style.opacity = 1;
-      };
-
-    }, 1000)
-  }
-
-  hide() {
-    console.log('se llama');
-    window.setTimeout(() => {
-      this.ocultarImagen = false;
-      this.mostrarOpciones = true;
-      this.ngOnInit()
-    }, 2000)
+  calcularResultados() {
+    this.analizarResultadosContar();
+    this.analizarResultadosEnumerar();
+    this.analizarResultadossitemasNumericos();
+    this.analizarResultadosOperacionesLogicas();
+    this.analizarResultadosOperaciones();
+    this.analizarResultadosEstimTamanho();
   };
+
+
+
 }

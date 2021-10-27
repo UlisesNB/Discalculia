@@ -26,6 +26,11 @@ export class TestService {
     return this.http.get(`${this._url}AlumnoDelProfesor/${doc}`);
   }
 
+  postResultadoTest(resultadoTest: any) {
+    console.log('Lo que recibira la API: ', resultadoTest );
+    const headers =  { 'content-type': 'application/json'}  
+    return this.http.post(`${this._url}ResultadoTest/`, resultadoTest, {'headers': headers});
+  }
 
 
 
