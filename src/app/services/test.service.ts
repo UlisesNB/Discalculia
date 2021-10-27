@@ -12,25 +12,30 @@ export class TestService {
 
   constructor(private http: HttpClient) {
     console.log('Se conecta al service');
-  }
+  };
 
   getUser() {
     return this.http.get(`${this._url}UserProfile/`);
-  }
+  };
 
   getUserId(id: number) {
     return this.http.get(`${this._url}UserProfile/${id}`);
-  }
+  };
 
   getAlumnoProfesor(doc: string) {
     return this.http.get(`${this._url}AlumnoDelProfesor/${doc}`);
-  }
+  };
 
   postResultadoTest(resultadoTest: any) {
     console.log('Lo que recibira la API: ', resultadoTest );
     const headers =  { 'content-type': 'application/json'}  
     return this.http.post(`${this._url}ResultadoTest/`, resultadoTest, {'headers': headers});
-  }
+  };
+
+  postResultadoItem(item: any) {
+    const headers =  { 'content-type': 'application/json'}  
+    return this.http.post(`${this._url}ResultadoItemList/`, item, {'headers': headers});
+  };
 
 
 

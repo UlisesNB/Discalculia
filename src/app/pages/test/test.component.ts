@@ -161,8 +161,8 @@ export class TestComponent implements OnInit {
     controlSumasUno: new FormControl('', Validators.required),
     controlSumasDos: new FormControl('', Validators.required),
     controlSumasTres: new FormControl('', Validators.required),
-    ControlSumasCuatro: new FormControl('', Validators.required),
-    ControlSumasCinco: new FormControl('', Validators.required),
+    controlSumasCuatro: new FormControl('', Validators.required),
+    controlSumasCinco: new FormControl('', Validators.required),
   });
 
   estimacion = new FormGroup({
@@ -717,6 +717,14 @@ export class TestComponent implements OnInit {
     this.analizarResultadosOperacionesLogicas();
     this.analizarResultadosOperaciones();
     this.analizarResultadosEstimTamanho();
+
+    this.testService.postResultadoItem(this.arrayTest)
+    .subscribe(
+      res => {
+        console.log('Se envió correctamente el item: ', res);
+      },
+      err => console.log(err)
+    );
   };
 
 
