@@ -33,6 +33,7 @@ export class TestService {
   };
 
   postResultadoItem(item: any) {
+    console.log('Lo que recibira la API: ', item );
     const headers =  { 'content-type': 'application/json'}  
     return this.http.post(`${this._url}ResultadoItemList/`, item, {'headers': headers});
   };

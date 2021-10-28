@@ -1,5 +1,4 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper (selectionChange)="onStepChange($event)" *ngIf="mostrarStep" id="testAlumno">
-
     <mat-step [stepControl]="alumnoFormGroup" *ngIf="mostrarAlumno"  >
         <div  >
             <ng-template matStepLabel></ng-template>
@@ -888,11 +887,11 @@
 
                         <input class="numeros" type="number" value="3" disabled> <span class="signos"> + </span>
                         <input class="numeros" type="number" value="0" disabled> <span class="signos"> = </span>
-                        <input class="numeros" type="number" formControlName="ControlSumasCuatro"> <br><br>
+                        <input class="numeros" type="number" formControlName="controlSumasCuatro"> <br><br>
 
                         <input class="numeros" type="number" value="3" disabled> <span class="signos"> + </span>
                         <input class="numeros" type="number" value="5" disabled> <span class="signos"> = </span>
-                        <input class="numeros" type="number" formControlName="ControlSumasCinco"> <br><br>
+                        <input class="numeros" type="number" formControlName="controlSumasCinco"> <br><br>
 
                     </div> <br>
 

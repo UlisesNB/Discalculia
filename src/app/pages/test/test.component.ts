@@ -597,7 +597,7 @@ export class TestComponent implements OnInit {
       this.estimTamanhoTotal++;
     };
 
-    this.objEstimTamanho.pObtenido = this.operacionesTotal;
+    this.objEstimTamanho.pObtenido = this.estimTamanhoTotal;
 
     this.objEstimTamanho.id_resultadoTest = this.resultadoTest.id
 
@@ -664,7 +664,7 @@ export class TestComponent implements OnInit {
         this.ocultarImagenUno = false;
         this.mostrarOpcionesUno = true;
         this.detector.detectChanges();
-      }, 6000);
+      }, 8000);
     };
 
     if (evt.selectedIndex == 22) {
@@ -726,7 +726,4 @@ export class TestComponent implements OnInit {
       err => console.log(err)
     );
   };
-
-
-
 }
