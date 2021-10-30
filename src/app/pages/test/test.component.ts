@@ -205,8 +205,8 @@ export class TestComponent implements OnInit {
 
   resultadoTest = {
     id: null,
-    id_alumno: null,
-    id_profesor: null,
+    id_alumno: 0,
+    id_profesor: 0,
     indicador: null,
     observacion: null
   };
@@ -616,6 +616,7 @@ export class TestComponent implements OnInit {
           this.resultadoTest.id_alumno = this.alumnoJson.id_alumno.id;
           this.resultadoTest.id_profesor = this.alumnoJson.id_profesor.id;
 
+          console.log('Resultado TEST', this.resultadoTest);
           this.guardarResultadoTest(this.resultadoTest);
 
         },
@@ -725,5 +726,16 @@ export class TestComponent implements OnInit {
       },
       err => console.log(err)
     );
+    this.aplicarDiagnosticoGeneral(this.resultadoTest, this.resultadoTest.id_alumno);
+  };
+
+  aplicarDiagnosticoGeneral(resultadoTest: any, idAlumno: number) {
+    this.testService.putResultadoTest(resultadoTest, idAlumno)
+      .subscribe(
+        res => {
+          console.log('Se aplicó el diagnostico: ', res);
+        },
+        err => console.log(err)
+      );
   };
 }
