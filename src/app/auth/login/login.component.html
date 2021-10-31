@@ -1,121 +1,40 @@
-<!-- 
 <div class="container formulario">
   <div class="row">
     <div class="col-md-4 mx-auto">
-        <div class="card">
-            <div class="card-header">
-                LOGIN
-            </div>
-            <div class="card-body ">
-                <form (submit)="signIn()" >
-                  <mat-form-field class="example-full-width ">
-                    <mat-label>Usuario</mat-label>
-                    <input type="text" matInput [(ngModel)]="user.loggin" name="email" class="form-control " placeholder="Usuario" required >
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                      Por favor ingrese una dirección de correo valida.
-                    </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
-                      Este campo es <strong>obligatorio</strong>
-                    </mat-error>
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width" >
-                    <mat-label>Password</mat-label>
-                    <input type="password" matInput [(ngModel)]="user.password" name="password" class="form-control" placeholder="*******" required >
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                      Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
-                      Este campo es <strong>obligatorio</strong>
-                    </mat-error>
-                  </mat-form-field>
-                    <button type="submit" class="btn btn-primary btn-block login-button">
-                      Iniciar Sesión
-                    </button>
-                </form>
-            </div>
+      <div class="card">
+        <div class="card-header">
+          LOGIN
         </div>
-    </div>
-  </div>
-</div> -->
-
-
-<div class="container formulario">
-  <div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card">
-            <div class="card-header">
-                LOGIN
-            </div>
-            <div class="card-body ">
-                <form [formGroup]="userForm" (ngSubmit)="signIn()" >
-                  <mat-form-field class="example-full-width ">
-                    <mat-label>Usuario</mat-label>
-                    <input type="text" matInput formControlName="loggin" name="email" class="form-control " placeholder="Usuario"  >
-                    <mat-error *ngIf="userForm.hasError('loggin') && !userForm.hasError('required')">
-                      Por favor ingrese una dirección de correo valida.
-                    </mat-error>
-                    <!-- <mat-error *ngIf="userForm.get('loggin') hasError('required')">
+        <div class="card-body ">
+          <form [formGroup]="userForm" (ngSubmit)="signIn()">
+            <mat-form-field class="example-full-width ">
+              <mat-label>Usuario</mat-label>
+              <input type="text" matInput formControlName="loggin" name="email" class="form-control "
+                placeholder="Usuario">
+              <mat-error *ngIf="userForm.hasError('loggin') && !userForm.hasError('required')">
+                Por favor ingrese una dirección de correo valida.
+              </mat-error>
+              <!-- <mat-error *ngIf="userForm.get('loggin') hasError('required')">
                       Este campo es <strong>obligatorio</strong>
                     </mat-error> -->
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width" >
-                    <mat-label>Password</mat-label>
-                    <input type="password" matInput formControlName="password" name="password" class="form-control" placeholder="*******"  >
-                    <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput formControlName="password" name="password" class="form-control"
+                placeholder="*******">
+              <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                       Please enter a valid email address
                     </mat-error> -->
-                    <mat-error *ngIf="userForm.hasError('required')">
-                      Este campo es <strong>obligatorio</strong>
-                    </mat-error>
-                  </mat-form-field>
-                    <button type="submit" class="btn btn-primary btn-block login-button">
-                      Iniciar Sesión
-                    </button>
-                </form>
-            </div>
+              <mat-error *ngIf="userForm.hasError('required')">
+                Este campo es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+            <button type="submit" class="btn btn-primary btn-block login-button">
+              Iniciar Sesión
+            </button>
+          </form>
         </div>
+      </div>
     </div>
   </div>
 </div>
-
-
-<!-- <div class="container formulario">
-  <div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card">
-            <div class="card-header">
-                LOGIN
-            </div>
-            <div class="card-body ">
-                <form  (nsubmit)="signIn()" >
-                  <mat-form-field class="example-full-width ">
-                    <mat-label>Usuario</mat-label>
-                    <input type="text" matInput formControlName="loggin" name="email" class="form-control " placeholder="Usuario"  >
-                    <mat-error *ngIf="loggin.hasError('email') && !loggin.hasError('required')">
-                      Este campo es <strong>obligatorio</strong>
-                    </mat-error>
-                    <mat-error *ngIf="loggin.hasError('required')">
-                      Este campo es <strong>obligatorio</strong>
-                    </mat-error>
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width" >
-                    <mat-label>Password</mat-label>
-                    <input type="password" matInput formControlName="password" name="password" class="form-control" placeholder="*******"  >
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                      Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="password.hasError('required')">
-                      Este campo es <strong>obligatorio</strong>
-                    </mat-error>
-                  </mat-form-field>
-                    <button type="submit" class="btn btn-primary btn-block login-button">
-                      Iniciar Sesión
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-  </div>
-</div> -->
-
-

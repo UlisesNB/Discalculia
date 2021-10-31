@@ -4,19 +4,17 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Seleccione la imagen con mas elementos</label>
+                    <label class="titulo">Por favor, ingrese su número de cedula para iniciar el TEST</label>
                     <div class="elements" aria-labelledby="example-radio-group-label">
 
-                        <!-- <div class="options">
-                            <input type="text" [(ngModel)]="documento" (keyup)="buscarAlumno(documento)">
-                            <div>
-                                <button type="submit" mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                            </div>
-                        </div> -->
-
                         <div class="options">
-                            <input type="text" [(ngModel)]="documento" >
-                            <div>
+
+                            <mat-form-field class="access-form">
+                                <mat-label>Cedula de Identidad</mat-label>
+                                <input type="email" matInput [(ngModel)]="documento">
+                            </mat-form-field>
+                            <!-- <input type="text" [(ngModel)]="documento" > -->
+                            <div class="button-access-form">
                                 <button type="submit" (click)="buscarAlumno(documento)" mat-raised-button color="primary" matStepperNext>Siguiente</button>
                             </div>
                         </div>
@@ -52,11 +50,11 @@
                         </div>
 
                     </mat-radio-group>
-                    <div>La respuesta es: {{contarFormGroup.controls['respuestaSeleccionadaFrutas'].value}}</div>
 
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -87,13 +85,11 @@
                         </div>
 
                     </mat-radio-group>
-                    <div>La respuesta es: {{contarFormGroup.controls['respuestaSeleccionadaArboles'].value}}</div>
 
                 </div>
             </div>
             <div class="boton-next">
                 <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
-
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -117,12 +113,6 @@
                             <input class="numeros" type="number" id="9" formControlName="contar_3_4">
 
                             <br><br><br>
-                            <label>Respuestas que se recibiran para chequear si es correcto o no:
-                                {{contarFormGroup.controls['contar_3_1'].value}}
-                                {{contarFormGroup.controls['contar_3_2'].value}},
-                                {{contarFormGroup.controls['contar_3_3'].value}},
-                                {{contarFormGroup.controls['contar_3_4'].value}}
-                            </label>
 
 
                         </div> <br>
@@ -196,6 +186,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -219,6 +210,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -240,6 +232,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -264,6 +257,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -285,6 +279,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -304,11 +299,11 @@
                         </div> <br>
 
                     </div>
-                    <div>La respuesta es: {{enumerarFormGroup.controls['estrellas'].value}}</div>
 
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext >Siguiente</button>
             </div>
         </form>
@@ -349,11 +344,11 @@
                         </section>
 
                     </div>
-                    <div>La respuesta es: {{correcta1}}</div>
 
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -366,6 +361,7 @@
                 <div class="pregunta-i">
                     <label class="titulo">Cual es el numero mas grande?</label><br>
                     <div class="options_sistNum">
+                        
                         <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label"
                             formControlName="elegirMayor_2_10">
 
@@ -379,8 +375,8 @@
                                     <mat-radio-button value="10"></mat-radio-button>
                                 </div>
                             </div>
-
                         </mat-radio-group>
+
                         <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label"
                             formControlName="elegirMayor_2_6">
 
@@ -396,6 +392,7 @@
                             </div>
 
                         </mat-radio-group>
+
                         <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label"
                             formControlName="elegirMayor_4_5">
 
@@ -411,7 +408,8 @@
                             </div>
 
                         </mat-radio-group>
-                        <mat-radio-group aria-labelledby="example-radio-group-label" formControlName="elegirMayor_8_7">
+
+                        <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label" formControlName="elegirMayor_8_7">
 
                             <div class="options-container">
                                 <div class="select">
@@ -425,7 +423,8 @@
                             </div>
 
                         </mat-radio-group>
-                        <mat-radio-group aria-labelledby="example-radio-group-label" formControlName="elegirMayor_9_3">
+
+                        <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label" formControlName="elegirMayor_9_3">
 
                             <div class="options-container">
                                 <div class="select">
@@ -444,6 +443,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -520,11 +520,12 @@
                                 </mat-checkbox>
                             </div>
                         </section>
-
                     </div>
                 </div>
             </div>
+
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -535,21 +536,18 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Cuenta cuantos estrellas hay</label>
-                    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)"
-                        aria-labelledby="example-radio-group-label">
-
+                    <label class="titulo">Ordena las estrellas de menor a mayor</label>
+                    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" aria-labelledby="example-radio-group-label">
                         <div class="example-box" *ngFor="let movie of items" cdkDrag>
                             <!-- <div class="example-custom-placeholder" *cdkDragPlaceholder></div> -->
-                            <img [src]="movie.img" class="example-custom-placeholder">
+                            <img [src]="movie.img" class="example-custom-placeholder estrellas-opciones">
                         </div>
-
                     </div>
-                    <div>La respuesta es: {{items | json}}</div>
-
                 </div>
             </div>
+
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -575,11 +573,11 @@
                         </div>
 
                     </mat-radio-group>
-                    <div>La respuesta es: {{operacionesLogicas.controls['controlPiezas'].value}}</div>
 
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary"  matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -644,6 +642,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary"  matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -693,13 +692,11 @@
                         <input class="numeros" type="number" value="8" disabled> <span class="signos"> = </span>
                         <input class="numeros" type="number" formControlName="controlRellenarVeinteYOcho"> <br><br>
 
-
                     </div> <br>
-
-
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -716,19 +713,19 @@
                         <div class="options">
                             <img src="../../../assets/globos-2.jpg">
                         </div>
-                        <div class="options">
-                            <span class="signos"> + </span>
+                        <div class="operadores">
+                            <span class="signos-imagenes"> + </span>
                         </div>
                         <div class="options">
-                            <img src="../../../assets/globos-3.jpg"> <span class="signos"> = </span>
+                            <img src="../../../assets/globos-3.jpg"> <span class="signos-imagenes"> = </span>
                             <input class="numeros" type="number" formControlName="controlGlobos"> <br><br>
                         </div>
                     </div>
 
-
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -747,12 +744,12 @@
                             <img src="../../../assets/lapices-3.png"> <br>
                         </div>
 
-                        <div class="options">
-                            <span class="signos"> + </span>
+                        <div class="operadores">
+                            <span class="signos-imagenes"> + </span>
                         </div>
 
                         <div class="options">
-                            <img src="../../../assets/lapices-3.png"> <span class="signos"> = </span>
+                            <img src="../../../assets/lapices-3.png"> <span class="signos-imagenes"> = </span>
                             <input class="numeros" type="number" formControlName="controlLapices"> <br><br>
                         </div>
 
@@ -762,6 +759,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -780,12 +778,12 @@
                             <img src="../../../assets/conejitos-4.jpg"> <br>
                         </div>
 
-                        <div class="options">
-                            <span class="signos"> + </span>
+                        <div class="operadores">
+                            <span class="signos-imagenes"> + </span>
                         </div>
 
                         <div class="options">
-                            <img src="../../../assets/conejitos-4.jpg"> <span class="signos"> = </span>
+                            <img src="../../../assets/conejitos-4.jpg"> <span class="signos-imagenes"> = </span>
                             <input class="numeros" type="number" formControlName="controlConejos"> <br><br>
                         </div>
 
@@ -794,6 +792,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -812,12 +811,12 @@
                             <img src="../../../assets/pelotas-5.jpg"> <br>
                         </div>
 
-                        <div class="options">
-                            <span class="signos"> + </span>
+                        <div class="operadores">
+                            <span class="signos-imagenes"> + </span>
                         </div>
 
                         <div class="options">
-                            <img src="../../../assets/pelotas-4.jpg"> <span class="signos"> = </span>
+                            <img src="../../../assets/pelotas-4.jpg"> <span class="signos-imagenes"> = </span>
                             <input class="numeros" type="number" formControlName="controlPelotas"> <br><br>
                         </div>
 
@@ -826,6 +825,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -844,12 +844,12 @@
                             <img src="../../../assets/flores-3.png"> <br>
                         </div>
 
-                        <div class="options">
-                            <span class="signos"> + </span>
+                        <div class="operadores">
+                            <span class="signos-imagenes"> + </span>
                         </div>
 
                         <div class="options">
-                            <img src="../../../assets/flores-4.jpg"> <span class="signos"> = </span>
+                            <img src="../../../assets/flores-4.jpg"> <span class="signos-imagenes"> = </span>
                             <input class="numeros" type="number" formControlName="controlFlores"> <br><br>
                         </div>
 
@@ -858,6 +858,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -898,6 +899,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -920,7 +922,7 @@
                         </div>
                     </div>
 
-                    <mat-radio-group  class="elements" 
+                    <mat-radio-group  class="elements" *ngIf="mostrarOpcionesUno"
                         aria-labelledby="example-radio-group-label" formControlName="controlEjercicioUno">
 
                         <div>
@@ -936,6 +938,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -974,6 +977,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -1012,6 +1016,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -1050,6 +1055,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -1088,6 +1094,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </form>
@@ -1126,6 +1133,7 @@
                 </div>
             </div>
             <div class="boton-next">
+                <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary"  matStepperNext>Siguiente</button>
             </div>
         </form>

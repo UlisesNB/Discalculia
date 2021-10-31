@@ -10,6 +10,7 @@ import { TestService } from '../../services/test.service';
 export class ResultadosComponent implements OnInit {
 
   resultados: any;
+  resultadosItems: [] = [];
 
   constructor(private testService: TestService) { 
 
@@ -18,10 +19,20 @@ export class ResultadosComponent implements OnInit {
   }
 
   obtenerResultados() {
-    this.testService.getUser().subscribe((data) => {
+    this.testService.getResultadoTest()
+    .subscribe((data) => {
       this.resultados = data;
       console.log('Resultados: ', this.resultados);
+      // for (let i = 0; i < this.resultados.length; i++) {
+      //   const resultado = this.resultados[i];
+      //   console.log('Resultados: ', resultado);
+      //   if (resultado) {
+          
+      //   }
+  
+      // }
     });
+
   }
 
   ngOnInit(): void {

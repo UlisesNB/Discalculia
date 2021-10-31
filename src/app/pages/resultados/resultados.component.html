@@ -1,4 +1,4 @@
-<p>LISTA DE RESULTADOS</p>
+<!-- <p>LISTA DE RESULTADOS</p>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -14,9 +14,38 @@
           <th> {{resultado.id}} </th>
           <th colspan="2"> {{resultado.loggin}} </th>
           <th> {{resultado.password}} </th>
-          <th> <button type="button" class="btn btn-primary" routerLink="/detalles/{{resultado.id}}">Ver más</button></th>
 
 
         </tr>
       </tbody>
-</table>
+</table> -->
+<!-- 
+<div>
+  <div class="container">
+    <div *ngFor="let resultado of resultados">
+      <span>Nombre del alumno: {{resultado.id_resultadoTest.id_alumno.id_entidad.nombre}}</span><br>
+      <span>Perfil Detallado</span> <br> <br>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Area</th>
+                <th scope="col">Puntaje Obtenido</th>
+                <th scope="col">Puntaje Esperado</th>
+                <th scope="col">Indicador</th>
+                <th scope="col">Observacion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th> {{resultado.id_area.descripcion}} </th>
+              <th > {{ resultado.pObtenido}} </th>
+              <th>{{resultado.id_area.pEsperado}}</th>
+              <th>  {{ resultado.indicador }}</th>
+              <th colspan="1"> {{ resultado.observacion }} </th>
+    
+            </tr>
+          </tbody>
+    </table>
+    </div>
+  </div>
+</div> -->

@@ -26,6 +26,14 @@ export class TestService {
     return this.http.get(`${this._url}AlumnoDelProfesor/${doc}`);
   };
 
+  getResultadoTest() {
+    return this.http.get(`${this._url}ResultadoTest/`);
+  }
+
+  getResultadoItemList() {
+    return this.http.get(`${this._url}ResultadoItemList/`);
+  }
+
   postResultadoTest(resultadoTest: any) {
     console.log('Lo que recibira la API: ', resultadoTest );
     const headers =  { 'content-type': 'application/json'}  
@@ -42,6 +50,12 @@ export class TestService {
     console.log('Lo que recibira la API: ', item );
     const headers =  { 'content-type': 'application/json'}  
     return this.http.post(`${this._url}ResultadoItemList/`, item, {'headers': headers});
+  };
+
+  postAlumno(alumno: any) {
+    console.log('Objeto alumno que recibira la Api');
+    const headers =  { 'content-type': 'application/json'};
+    return this.http.post(`${this._url}Alumnos/`, alumno, {'headers': headers});
   };
 
 
