@@ -7,6 +7,7 @@ import {
   CdkDragDrop,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-test',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,7 +19,7 @@ import {
 })
 export class TestComponent implements OnInit {
 
-  isLinear = true;
+  isLinear = false;
   mostrarStep: boolean = true;
 
   variable: boolean = false;
@@ -259,7 +260,7 @@ export class TestComponent implements OnInit {
     observacion: null
   };
 
-  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef, private detector: ChangeDetectorRef) { }
+  constructor(private testService: TestService, private _formBuilder: FormBuilder, private cdr: ChangeDetectorRef, private detector: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit(): void { }
 
@@ -727,6 +728,27 @@ export class TestComponent implements OnInit {
       err => console.log(err)
     );
     this.aplicarDiagnosticoGeneral(this.resultadoTest, this.resultadoTest.id_alumno);
+    this.resetForm();
+  };
+
+  resetForm() {
+    this.contarFormGroup.reset();
+    this.enumerarFormGroup.reset()
+    this.sistNumFormGroup.reset();
+    this.operacionesLogicas.reset()    
+    this.operaciones.reset();
+    this.estimacion.reset()
+
+    this.contarTotal = 0;
+    this.enumerarTotal = 0;
+    this.sistNumericoTotal = 0;
+    this.operLogicasTotal = 0;
+    this.operacionesTotal = 0;
+    this.estimTamanhoTotal = 0;
+
+    this.router.navigate(['/home']);
+
+
   };
 
   aplicarDiagnosticoGeneral(resultadoTest: any, idAlumno: number) {

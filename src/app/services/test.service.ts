@@ -27,7 +27,7 @@ export class TestService {
   };
 
   getResultadoTest() {
-    return this.http.get(`${this._url}ResultadoTest/`);
+    return this.http.get(`${this._url}Vista_Resultados/`);
   }
 
   getResultadoItemList() {

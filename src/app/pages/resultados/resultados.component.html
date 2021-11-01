@@ -1,51 +1,69 @@
-<!-- <p>LISTA DE RESULTADOS</p>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Nº</th>
-            <th scope="col">Nombre y Apellido</th>
-            <th scope="col">Puntaje Total</th>
-            <th scope="col">Diagnostico</th>
-            <th scope="col">Informacion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let resultado of resultados">
-          <th> {{resultado.id}} </th>
-          <th colspan="2"> {{resultado.loggin}} </th>
-          <th> {{resultado.password}} </th>
-
-
-        </tr>
-      </tbody>
-</table> -->
-<!-- 
-<div>
-  <div class="container">
+<div class="tabla">
+  <div class="contenedor">
     <div *ngFor="let resultado of resultados">
-      <span>Nombre del alumno: {{resultado.id_resultadoTest.id_alumno.id_entidad.nombre}}</span><br>
-      <span>Perfil Detallado</span> <br> <br>
+      <span class="titulos">Nombre del alumno: <span class="nombre"> {{resultado.nombre_alumno}} </span> </span><br>
+      <span class="titulos">Perfil Detallado</span> <br> <br>
       <table class="table table-striped">
         <thead>
-            <tr>
-                <th scope="col">Area</th>
-                <th scope="col">Puntaje Obtenido</th>
-                <th scope="col">Puntaje Esperado</th>
-                <th scope="col">Indicador</th>
-                <th scope="col">Observacion</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th> {{resultado.id_area.descripcion}} </th>
-              <th > {{ resultado.pObtenido}} </th>
-              <th>{{resultado.id_area.pEsperado}}</th>
-              <th>  {{ resultado.indicador }}</th>
-              <th colspan="1"> {{ resultado.observacion }} </th>
-    
-            </tr>
-          </tbody>
-    </table>
+          <tr>
+            <th scope="col">Area</th>
+            <th scope="col">Puntaje Obtenido</th>
+            <th scope="col">Puntaje Esperado</th>
+            <th scope="col">Indicador</th>
+            <th scope="col">Observacion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th> Contar </th>
+            <th> {{ resultado.c_pobtenido}} </th>
+            <th>{{resultado.c_pesperado}}</th>
+            <th> {{ resultado.c_indicador }}</th>
+            <th> {{ resultado.c_observacion }} </th>
+          </tr>
+
+          <tr>
+            <th> Enumerar </th>
+            <th> {{ resultado.n_pobtenido}} </th>
+            <th>{{resultado.n_pesperado}}</th>
+            <th> {{ resultado.n_indicador }}</th>
+            <th> {{ resultado.n_observacion }} </th>
+          </tr>
+
+          <tr>
+            <th> Sistema Numericos </th>
+            <th> {{ resultado.sn_pobtenido}} </th>
+            <th>{{resultado.sn_pesperado}}</th>
+            <th> {{ resultado.sn_indicador }}</th>
+            <th> {{ resultado.sn_observacion }} </th>
+          </tr>
+
+          <tr>
+            <th> Operaciones Logicas </th>
+            <th> {{ resultado.opl_pobtenido}} </th>
+            <th>{{resultado.opl_pesperado}}</th>
+            <th> {{ resultado.opl_indicador }}</th>
+            <th> {{ resultado.opl_observacion }} </th>
+          </tr>
+
+          <tr>
+            <th> Operaciones </th>
+            <th> {{ resultado.op_pobtenido}} </th>
+            <th>{{resultado.op_pesperado}}</th>
+            <th> {{ resultado.op_indicador }}</th>
+            <th> {{ resultado.op_observacion }} </th>
+          </tr>
+
+          <tr>
+            <th> Estimacion de Tamaños </th>
+            <th> {{ resultado.et_pobtenido}} </th>
+            <th>{{resultado.et_pesperado}}</th>
+            <th> {{ resultado.et_indicador }}</th>
+            <th> {{ resultado.et_observacion }} </th>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
   </div>
-</div> -->
+</div>
