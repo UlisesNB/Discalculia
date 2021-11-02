@@ -33,23 +33,23 @@ export class TestComponent implements OnInit {
   items = [
     {
       orden: 2,
-      img: '/assets/dos-estrellas.jpg'
+      img: '/assets/007.png'
     },
     {
       orden: 5,
-      img: '/assets/cinco-estrellas.jpg'
+      img: '/assets/5 estrellas.gif'
     },
     {
       orden: 4,
-      img: '/assets/cuatro-estrellas.jpg'
+      img: '/assets/009.png'
     },
     {
       orden: 1,
-      img: '/assets/una-estrella.jpg'
+      img: '/assets/Little Star Animation.gif'
     },
     {
       orden: 3,
-      img: '/assets/tres-estrellas.png'
+      img: '/assets/3 estrellas.gif'
     }
   ];
 
@@ -270,11 +270,7 @@ export class TestComponent implements OnInit {
       this.contarTotal++;
     };
 
-    if (this.contarFormGroup.controls['respuestaSeleccionadaArboles'].value == '9') {
-      this.contarTotal++;
-    };
-
-    if (this.contarFormGroup.controls['respuestaSeleccionadaFrutas'].value == '9') {
+    if (this.contarFormGroup.controls['respuestaSeleccionadaArboles'].value == '6') {
       this.contarTotal++;
     };
 
@@ -322,7 +318,7 @@ export class TestComponent implements OnInit {
 
   analizarResultadosEnumerar() {
 
-    if (this.enumerarFormGroup.controls['corazones'].value == 9) {
+    if (this.enumerarFormGroup.controls['corazones'].value == 5) {
       this.enumerarTotal++;
     };
 
@@ -330,7 +326,7 @@ export class TestComponent implements OnInit {
       this.enumerarTotal++;
     };
 
-    if (this.enumerarFormGroup.controls['dinosaurios'].value == 6) {
+    if (this.enumerarFormGroup.controls['dinosaurios'].value == 11) {
       this.enumerarTotal++;
     };
 

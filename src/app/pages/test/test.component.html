@@ -1,4 +1,5 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper (selectionChange)="onStepChange($event)" *ngIf="mostrarStep" id="testAlumno">
+
     <mat-step [stepControl]="alumnoFormGroup" *ngIf="mostrarAlumno"  >
         <div  >
             <ng-template matStepLabel></ng-template>
@@ -30,7 +31,7 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Seleccione la imagen con mas elementos</label>
+                    <label class="titulo">¿Puedes marcar el conjunto que tiene hasta 9 elementos?</label>
                     <mat-radio-group class="elements" aria-labelledby="example-radio-group-label"
                         formControlName="respuestaSeleccionadaFrutas">
 
@@ -65,7 +66,7 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Seleccione la imagen con mas elementos</label>
+                    <label class="titulo">¿Puedes marcar el conjunto que tiene hasta 6 elementos?</label>
                     <mat-radio-group class="elements" aria-labelledby="example-radio-group-label"
                         formControlName="respuestaSeleccionadaArboles">
 
@@ -94,97 +95,77 @@
             </div>
         </form>
     </mat-step>
+
     <mat-step [stepControl]="contarFormGroup" >
         <form [formGroup]="contarFormGroup">
             <ng-template matStepLabel></ng-template>
-            <div>
-                <div>
-                    <label class="titulo">Contar con un limite inferior</label>
-                    <div aria-labelledby="example-radio-group-label">
+            <div class="preguntas">
+                <div class="pregunta-i">
+                        <div class="opciones-padre">
+                            <div class="enumerar-hijo">
+                                <h2> ¿ Puedes contar desde el número 3 ? </h2> 
+    
+                                <input class="numeros" type="number" id="5" value="3" disabled> ,
+                                <input class="numeros" type="number" id="6" formControlName="contar_3_1"> ,
+                                <input class="numeros" type="number" id="7" formControlName="contar_3_2"> ,
+                                <input class="numeros" type="number" id="8" formControlName="contar_3_3"> ,
+                                <input class="numeros" type="number" id="9" formControlName="contar_3_4">
+                            </div> 
+                            <div class="enumerar-hijo">
+                                <h2> ¿ Puedes contar desde el número 7 ? </h2> 
+    
+                                <input class="numeros" type="number" id="10" value="7" disabled> ,
+                                <input class="numeros" type="number" id="11" formControlName="contar_7_1"> ,
+                                <input class="numeros" type="number" id="12" formControlName="contar_7_2"> ,
+                                <input class="numeros" type="number" id="13" formControlName="contar_7_3"> ,
+                                <input class="numeros" type="number" id="14" formControlName="contar_7_4">
+                            </div> 
+                        </div>
 
-                        <div>
-                            <h3>Cuenta a partir de 3 </h3>
+                        <div class="opciones-padre">
+                            <div class="enumerar-hijo">
+                                <h2> ¿ Puedes contar desde 5 hasta 9 ? </h2>
+    
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_5_1"> ,
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_5_2"> ,
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_5_3"> ,
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_5_4"> ,
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_5_5"> 
+                            </div> 
+                            <div class="enumerar-hijo">
+                                <h2> ¿ Puedes contar desde 4 hasta 8 ? </h2>
+    
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_4_1"> ,
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_4_2"> ,
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_4_3"> ,
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_4_4"> ,
+                                <input class="numeros" type="number" formControlName="contarLimInfSup_4_5">
+                            </div> 
+                        </div>
 
-                            <span>Cuenta hacia delante desde el 3 </span> <br>
-                            <input class="numeros" type="number" id="5" value="3" disabled> ,
-                            <input class="numeros" type="number" id="6" formControlName="contar_3_1"> ,
-                            <input class="numeros" type="number" id="7" formControlName="contar_3_2"> ,
-                            <input class="numeros" type="number" id="8" formControlName="contar_3_3"> ,
-                            <input class="numeros" type="number" id="9" formControlName="contar_3_4">
-
-                            <br><br><br>
-
-
-                        </div> <br>
-                        <div>
-                            <h3>Cuenta a partir de 7 </h3>
-
-                            <span>Cuenta hacia delante desde el 7 </span> <br>
-                            <input class="numeros" type="number" id="10" value="7" disabled> ,
-                            <input class="numeros" type="number" id="11" formControlName="contar_7_1"> ,
-                            <input class="numeros" type="number" id="12" formControlName="contar_7_2"> ,
-                            <input class="numeros" type="number" id="13" formControlName="contar_7_3"> ,
-                            <input class="numeros" type="number" id="14" formControlName="contar_7_4">
-
-
-                        </div> <br>
-
-                        <label class="titulo">Contar con un limite inferior y superior: </label>
-                        <div>
-                            <h3>Cuenta a partir de 5 hasta 9 </h3>
-
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_5_1"> ,
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_5_2"> ,
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_5_3"> ,
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_5_4"> ,
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_5_5"> ,
-
-
-                            <br><br><br>
-                            <label>Respuestas que se recibiran para chequear si es correcto o no: </label>
-
-
-                        </div> <br>
-                        <div>
-                            <h3>Cuenta a partir de 4 hasta 8</h3>
-
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_4_1"> ,
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_4_2"> ,
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_4_3"> ,
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_4_4"> ,
-                            <input class="numeros" type="number" formControlName="contarLimInfSup_4_5">
-
-
-                        </div> <br>
-
-                        <label class="titulo">Cuenta hacia atras: </label> <br><br>
-                        <div>
-                            <h3>Cuenta hacia atras desde 7 </h3>
-
-                            <input class="numeros" type="number" formControlName="contarAtras_7_1"> ,
-                            <input class="numeros" type="number" formControlName="contarAtras_7_2"> ,
-                            <input class="numeros" type="number" formControlName="contarAtras_7_3"> ,
-                            <input class="numeros" type="number" formControlName="contarAtras_7_4"> ,
-                            <input class="numeros" type="number" formControlName="contarAtras_7_5">
-
-                            <br><br><br>
-
-                        </div> <br>
-                        <div>
-                            <h3>Cuenta hacia atras desde 15</h3>
-
-                            <input class="numeros" type="number" formControlName="contarAtras_15_1"> ,
-                            <input class="numeros" type="number" formControlName="contarAtras_15_2"> ,
-                            <input class="numeros" type="number" formControlName="contarAtras_15_3"> ,
-                            <input class="numeros" type="number" formControlName="contarAtras_15_4"> ,
-                            <input class="numeros" type="number" formControlName="contarAtras_15_5">
-
-                            <br><br><br>
-                        </div> <br>
+                        <div class="opciones-padre">
+                            <div class="enumerar-hijo">
+                                <h2> ¿ Puedes contar hacia atrás desde 7 ? </h2>
+    
+                                <input class="numeros" type="number" formControlName="contarAtras_7_1"> ,
+                                <input class="numeros" type="number" formControlName="contarAtras_7_2"> ,
+                                <input class="numeros" type="number" formControlName="contarAtras_7_3"> ,
+                                <input class="numeros" type="number" formControlName="contarAtras_7_4"> ,
+                                <input class="numeros" type="number" formControlName="contarAtras_7_5">
+                            </div> 
+                            <div class="enumerar-hijo">
+                                <h2> ¿ Puedes contar hacia atrás desde el 15 ? </h2>
+    
+                                <input class="numeros" type="number" formControlName="contarAtras_15_1"> ,
+                                <input class="numeros" type="number" formControlName="contarAtras_15_2"> ,
+                                <input class="numeros" type="number" formControlName="contarAtras_15_3"> ,
+                                <input class="numeros" type="number" formControlName="contarAtras_15_4"> ,
+                                <input class="numeros" type="number" formControlName="contarAtras_15_5">
+                            </div> 
+                        </div>
 
                     </div>
                 </div>
-            </div>
             <div class="boton-next">
                 <button mat-raised-button color="primary" matStepperPrevious class="boton-back">Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
@@ -197,11 +178,11 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Cuenta cuantos corazones hay</label>
+                    <label class="titulo">¿Puedes contar cuantos corazones hay?</label>
                     <div class="elements" aria-labelledby="example-radio-group-label">
 
                         <div class="options">
-                            <img src="../../../assets/corazones.png"> <br>
+                            <img src="../../../assets/07.gif"> <br>
                             <input class="enumerar-input" type="number" formControlName="corazones">
                         </div>
 
@@ -221,7 +202,7 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Cuenta cuantos ratones hay</label>
+                    <label class="titulo">¿Cuantos ratones hay?</label>
                     <div class="elements" aria-labelledby="example-radio-group-label">
 
                         <div class="options">
@@ -243,11 +224,11 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Cuenta cuantos dinosaurios hay</label>
+                    <label class="titulo"> ¿Cuantos dinosaurio hay?</label>
                     <div class="elements" aria-labelledby="example-radio-group-label">
 
                         <div class="options">
-                            <img src="../../../assets/dinosaurios.jpg"> <br>
+                            <img src="../../../assets/005.png"> <br>
                             <input class="enumerar-input" type="number" formControlName="dinosaurios">
 
                         </div>
@@ -314,34 +295,63 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Marca con una x las cifras, es decir números que sirven para contar</label>
+                    <label class="titulo">Seleccione los números que sirven para contar</label>
                     <div class="elements" aria-labelledby="example-radio-group-label">
-                        <div>
-                            <p>
-                                <img src="../../../assets/photo-9-35718.png" alt="">
-                                <mat-checkbox name="correcta1" [(ngModel)]="correcta1">9</mat-checkbox>
-                            </p>
-                            <p>
-                                <mat-checkbox name="incorrecta1" [(ngModel)]="incorrecta1">@</mat-checkbox>
-                            </p>
-                            <p>
-                                <mat-checkbox name="incorrecta2" [(ngModel)]="incorrecta2">F</mat-checkbox>
-                            </p>
-                            <p>
-                                <mat-checkbox name="correcta2" [(ngModel)]="correcta2">8</mat-checkbox>
-                            </p>
-                            <p>
-                                <mat-checkbox name="correcta3" [(ngModel)]="correcta3">3</mat-checkbox>
-                            </p>
-                            <p>
-                                <mat-checkbox name="correcta4" [(ngModel)]="correcta4">6</mat-checkbox>
-                            </p>
-                            <p>
-                                <mat-checkbox name="incorrecta3" [(ngModel)]="incorrecta3">&</mat-checkbox>
-                            </p>
-                            <p>
-                                <mat-checkbox name="correcta2" [(ngModel)]="correcta5">2</mat-checkbox>
-                            </p>
+                        <div class="opciones-padre" >
+                            <div class="enumerar-hijo">
+
+                                <p>
+                                    <mat-checkbox name="correcta1" [(ngModel)]="correcta1"></mat-checkbox>
+                                    <img src="../../../assets/photo-9-35718.png" alt="">
+                                </p>
+                                <p>
+                                    <mat-checkbox name="incorrecta1" [(ngModel)]="incorrecta1"></mat-checkbox>
+                                    <img src="../../../assets/arroba.png" alt="">
+    
+                                </p>
+                            </div>
+
+                            <div class="enumerar-hijo">
+                                <p>
+                                    <mat-checkbox name="incorrecta2" [(ngModel)]="incorrecta2"></mat-checkbox>
+                                    <img src="../../../assets/f.png" alt="">
+    
+                                </p>
+                                <p>
+                                    <mat-checkbox name="correcta2" [(ngModel)]="correcta2"></mat-checkbox>
+                                    <img src="../../../assets/8png.png" alt="">
+    
+                                </p>
+                                
+                            </div>
+
+                            <div class="enumerar-hijo">
+                                <p>
+                                    <mat-checkbox name="correcta3" [(ngModel)]="correcta3"></mat-checkbox>
+                                    <img src="../../../assets/3.png" alt="">
+    
+                                </p>
+                                <p>
+                                    <mat-checkbox name="correcta4" [(ngModel)]="correcta4"></mat-checkbox>
+                                    <img src="../../../assets/6 imagen.png" alt="">
+    
+                                </p>
+
+                            </div>
+
+                            <div class="enumerar-hijo">
+                                <p>
+                                    <mat-checkbox name="incorrecta3" [(ngModel)]="incorrecta3"></mat-checkbox>
+                                    <img src="../../../assets/&.png" alt="">
+    
+                                </p>
+                                <p>
+                                    <mat-checkbox name="correcta2" [(ngModel)]="correcta5"></mat-checkbox>
+                                    <img src="../../../assets/2.png" alt="">
+    
+                                </p>
+
+                            </div>
                         </div>
 
                     </div>
@@ -559,7 +569,7 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Seleccione la imagen con mas elementos</label>
+                    <label class="titulo"> Ahora debes marcar la que tiene más elementos</label>
                     <mat-radio-group class="elements" aria-labelledby="example-radio-group-label"
                         formControlName="controlPiezas">
 
@@ -589,56 +599,58 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Hemos metido seis fichas dentro del sobre, crees que habra bastante si
-                        queremos sacar ….fichas del sobre</label>
+                    <label class="titulo">Hemos metido seis fichas dentro del sobre, crees que habra bastante si...</label>
                     <div class="options">
-                        <img src="../../../assets/carta.PNG"> <br>
+                        <img class="imagen-sobre" src="../../../assets/014.png"> <br>
                     </div>
-                    <mat-radio-group aria-labelledby="example-radio-group-label"
-                        formControlName="controlCartaMenosOcho">
-                        <label>
-                            Si queremos sacar 8
-                        </label>
-                        <div>
-                            Si
-                            <mat-radio-button value="1"></mat-radio-button>
-                        </div>
-                        <div>
-                            No
-                            <mat-radio-button value="0"></mat-radio-button>
-                        </div>
+                    <div class="opciones-padre">
 
-                    </mat-radio-group>
-                    <mat-radio-group aria-labelledby="example-radio-group-label"
-                        formControlName="controlCartaMenosCuatro">
-                        <label>
-                            Si queremos sacar 4
-                        </label>
-                        <div>
-                            Si
-                            <mat-radio-button value="1"></mat-radio-button>
-                        </div>
-                        <div>
-                            No
-                            <mat-radio-button value="0"></mat-radio-button>
-                        </div>
-
-                    </mat-radio-group>
-                    <mat-radio-group aria-labelledby="example-radio-group-label"
-                        formControlName="controlCartaMenosSiete">
-                        <label>
-                            Si queremos sacar 7
-                        </label>
-                        <div>
-                            Si
-                            <mat-radio-button value="1"></mat-radio-button>
-                        </div>
-                        <div>
-                            No
-                            <mat-radio-button value="0"></mat-radio-button>
-                        </div>
-
-                    </mat-radio-group>
+                        <mat-radio-group class="opciones-hijo" aria-labelledby="example-radio-group-label"
+                            formControlName="controlCartaMenosOcho">
+                            <h2>
+                                Si queremos sacar 8
+                            </h2>
+                            <div>
+                                Si
+                                <mat-radio-button value="1"></mat-radio-button>
+                            </div>
+                            <div>
+                                No
+                                <mat-radio-button value="0"></mat-radio-button>
+                            </div>
+    
+                        </mat-radio-group>
+                        <mat-radio-group class="opciones-hijo" aria-labelledby="example-radio-group-label"
+                            formControlName="controlCartaMenosCuatro">
+                            <h2>
+                                Si queremos sacar 4
+                            </h2>
+                            <div>
+                                Si
+                                <mat-radio-button value="1"></mat-radio-button>
+                            </div>
+                            <div>
+                                No
+                                <mat-radio-button value="0"></mat-radio-button>
+                            </div>
+    
+                        </mat-radio-group>
+                        <mat-radio-group class="opciones-hijo" aria-labelledby="example-radio-group-label"
+                            formControlName="controlCartaMenosSiete">
+                            <h2>
+                                Si queremos sacar 7
+                            </h2>
+                            <div>
+                                Si
+                                <mat-radio-button value="1"></mat-radio-button>
+                            </div>
+                            <div>
+                                No
+                                <mat-radio-button value="0"></mat-radio-button>
+                            </div>
+    
+                        </mat-radio-group>
+                    </div>
 
                 </div>
             </div>
@@ -654,9 +666,8 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Rellena el numero que falta</label>
                     <div>
-                        <h3> Rellena el numero que falta </h3>
+                        <h1> Rellena el numero que falta </h1>
                         <input class="numeros" type="number" value="4" disabled> <span class="signos"> + </span>
                         <input class="numeros" type="number" formControlName="controlRellenarCuatro"> <span
                             class="signos"> = </span>
@@ -708,7 +719,7 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">OPERACIONES CON AYUDA DE IMÁGENES</label>
+                    <label class="titulo">¿ Cuantos globos tenemos ? </label>
                     <div class="elements">
 
                         <div class="options">
@@ -742,7 +753,7 @@
                     <div class="elements">
 
                         <div class="options">
-                            <img src="../../../assets/lapices-3.png"> <br>
+                            <img src="../../../assets/017.jpg"> <br>
                         </div>
 
                         <div class="operadores">
@@ -750,7 +761,7 @@
                         </div>
 
                         <div class="options">
-                            <img src="../../../assets/lapices-3.png"> <span class="signos-imagenes"> = </span>
+                            <img src="../../../assets/017.jpg"> <span class="signos-imagenes"> = </span>
                             <input class="numeros" type="number" formControlName="controlLapices"> <br><br>
                         </div>
 
@@ -809,7 +820,7 @@
                     <div class="elements">
 
                         <div class="options">
-                            <img src="../../../assets/pelotas-5.jpg"> <br>
+                            <img src="../../../assets/012.png"> <br>
                         </div>
 
                         <div class="operadores">
@@ -842,7 +853,7 @@
                     <div class="elements">
 
                         <div class="options">
-                            <img src="../../../assets/flores-3.png"> <br>
+                            <img src="../../../assets/015.png"> <br>
                         </div>
 
                         <div class="operadores">
@@ -850,7 +861,7 @@
                         </div>
 
                         <div class="options">
-                            <img src="../../../assets/flores-4.jpg"> <span class="signos-imagenes"> = </span>
+                            <img src="../../../assets/016.png"> <span class="signos-imagenes"> = </span>
                             <input class="numeros" type="number" formControlName="controlFlores"> <br><br>
                         </div>
 
@@ -870,10 +881,9 @@
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
-                    <label class="titulo">Sumas simples</label>
 
                     <div>
-                        <h3> Rellena el numero que falta </h3>
+                        <h1> Rellena el numero que falta </h1>
 
                         <input class="numeros" type="number" value="2" disabled> <span class="signos"> + </span>
                         <input class="numeros" type="number" value="2" disabled> <span class="signos"> = </span>
@@ -906,36 +916,40 @@
         </form>
     </mat-step>
 
-    <mat-step [stepControl]="estimacion" >
-        <form [formGroup]="estimacion" >
+    <mat-step [stepControl]="estimacion">
+        <form [formGroup]="estimacion">
             <ng-template matStepLabel></ng-template>
             <div class="preguntas">
                 <div class="pregunta-i">
                     <label *ngIf="ocultarImagenUno" class="titulo">OPERACIONES CON AYUDA DE IMÁGENES</label>
-
-                    <div *ngIf="ocultarImagenUno" >
+    
+                    <div *ngIf="ocultarImagenUno" class="opciones-padre">
                         <div class="options">
-                            <img src="../../../assets/018.PNG"> <br>
+                            <img class="imagen-estimacion" src="../../../assets/ESTIMACIÓN DE TAMAÑO/Ball Cycle.gif"> <br>
                         </div>
     
                         <div class="options">
-                            <img src="../../../assets/CANTIDAD 15.PNG"> <br>
+                            <img class="imagen-estimacion" src="../../../assets/ESTIMACIÓN DE TAMAÑO/Flickr loader.gif">
+                            <br>
                         </div>
                     </div>
+    
+                    <mat-radio-group  *ngIf="mostrarOpcionesUno" aria-labelledby="example-radio-group-label"
+                        formControlName="controlEjercicioUno" >
+                        <h1> ¿ En cual tarjeta habia mas puntos ? </h1><br><br>
+                        <div class="opciones-padre">
 
-                    <mat-radio-group  class="elements" *ngIf="mostrarOpcionesUno"
-                        aria-labelledby="example-radio-group-label" formControlName="controlEjercicioUno">
-
-                        <div>
-                            18
-                            <mat-radio-button value="18"></mat-radio-button>
+                            <div class="opciones-estimacion">
+                                <mat-radio-button value="18"></mat-radio-button>
+                            </div>
+                            <div class="opciones-estimacion">
+                   
+                                <mat-radio-button value="15"></mat-radio-button>
+                            </div>
                         </div>
-                        <div>
-                            15
-                            <mat-radio-button value="15"></mat-radio-button>
-                        </div>
-
+    
                     </mat-radio-group>
+    
                 </div>
             </div>
             <div class="boton-next">
@@ -1043,12 +1057,12 @@
                     <mat-radio-group *ngIf="mostrarOpcionesCuatro" class="elements"
                         aria-labelledby="example-radio-group-label" formControlName="controlEjercicioCuatro">
 
+                        <h1>¿En cual tarjeta habia mas puntos?</h1>
+
                         <div>
-                            1
                             <mat-radio-button value="1"></mat-radio-button>
                         </div>
                         <div>
-                            3
                             <mat-radio-button value="3"></mat-radio-button>
                         </div>
 

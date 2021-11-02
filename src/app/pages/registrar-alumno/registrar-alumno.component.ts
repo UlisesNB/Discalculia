@@ -28,17 +28,6 @@ export class RegistrarAlumnoComponent implements OnInit {
     id_alumno: 0,
     id_profesor: 0  
   }
-
-  // alumno = new FormGroup({
-  //   tipo_entidad: new FormControl('Al'),
-  //   nombre: new FormControl('', Validators.required),
-  //   apellido: new FormControl('', Validators.required),
-  //   telefono: new FormControl('', Validators.required),
-  //   direccion: new FormControl('', Validators.required),
-  //   id_usuario: new FormControl(),
-  //   nro_documento: new FormControl('', Validators.required),
-  // });
-
   matcher = new MyErrorStateMatcher();
 
   constructor(private testService: TestService, private fb: FormBuilder) { }
