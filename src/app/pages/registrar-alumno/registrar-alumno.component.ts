@@ -66,8 +66,6 @@ export class RegistrarAlumnoComponent implements OnInit {
     this.testService.postEntidad(this.entidad.value)
     .subscribe(
       res => {
-        console.log('Respuesta del servidor: ', res);
-
         this.recuperarEntidad(this.entidad.controls['nro_documento'].value)
 
         this.myNgForm.resetForm()
@@ -83,8 +81,6 @@ export class RegistrarAlumnoComponent implements OnInit {
     this.testService.getEntidad(doc)
     .subscribe(
       res => {
-        console.log('Entidad: ', res);
-
         let respuesta: any;
         respuesta = JSON.parse(JSON.stringify(res))
         this.alumno.id_entidad = respuesta.id
@@ -99,12 +95,9 @@ export class RegistrarAlumnoComponent implements OnInit {
     this.testService.postAlumno(alumno)
     .subscribe(
       res => {
-        console.log('alumno: ', res);
-
         let respuesta: any;
         let id: any;
         respuesta = JSON.parse(JSON.stringify(res));
-        console.log('Respuesta del alumno insertado: ', respuesta);
         this.aluProfe.id_alumno = respuesta.id;
 
         id = localStorage.getItem('id_profesor');
@@ -118,8 +111,6 @@ export class RegistrarAlumnoComponent implements OnInit {
     this.testService.getProfesor(id)
     .subscribe(
       res => {
-        console.log('alumno: ', res);
-
         let respuesta: any;
         respuesta = JSON.parse(JSON.stringify(res));
 
@@ -132,9 +123,7 @@ export class RegistrarAlumnoComponent implements OnInit {
   registarAlumnoProfesor() {
     this.testService.postAluProfe(this.aluProfe)
     .subscribe(
-      res => {
-        console.log('Resultado final: ', res);
-      }
+      res => {}
     );
   }
 
