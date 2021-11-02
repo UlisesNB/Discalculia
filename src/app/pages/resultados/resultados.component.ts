@@ -23,14 +23,6 @@ export class ResultadosComponent implements OnInit {
     .subscribe((data) => {
       this.resultados = data;
       console.log('Resultados: ', this.resultados);
-      // for (let i = 0; i < this.resultados.length; i++) {
-      //   const resultado = this.resultados[i];
-      //   console.log('Resultados: ', resultado);
-      //   if (resultado) {
-          
-      //   }
-  
-      // }
     });
 
   }

@@ -4,18 +4,18 @@
             <div class="contenedor">
                 <div class="form">
         
-                    <form [formGroup]="alumno" (ngSubmit)="registrarAlumno()">
+                    <form [formGroup]="entidad" (ngSubmit)="registrarEntidad()" #AluForm="ngForm">
                         
                         <div>
-                            <h1> Ingrese los datos del alumno</h1>
+                            <h1> Ingrese los datos del entidad</h1>
                         </div>
                         <mat-form-field class="example-full-width" appearance="outline">
                           <mat-label>Nombres</mat-label>
                           <input class="nombre" type="text" matInput formControlName="nombre" [errorStateMatcher]="matcher">
-                          <!-- <mat-error *ngIf="alumno.controls.nombre.hasError('email') && !alumno.controls.nombre.hasError('required')">
+                          <!-- <mat-error *ngIf="entidad.controls.nombre.hasError('email') && !entidad.controls.nombre.hasError('required')">
                             Please enter a valid email address
                           </mat-error> -->
-                          <mat-error *ngIf="alumno.controls.nombre.hasError('required')">
+                          <mat-error *ngIf="entidad.controls.nombre.hasError('required')">
                             El nombre es <strong>OBLIGATORIO</strong>
                           </mat-error>
                         </mat-form-field> <br><br>
@@ -23,21 +23,43 @@
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Apellidos</mat-label>
                             <input type="text" matInput formControlName="apellido" [errorStateMatcher]="matcher">
-                            <!-- <mat-error *ngIf="alumno.controls.apellido.hasError('email') && !emailFormControl.hasError('required')">
+                            <!-- <mat-error *ngIf="entidad.controls.apellido.hasError('email') && !emailFormControl.hasError('required')">
                               Please enter a valid email address
                             </mat-error> -->
-                            <mat-error *ngIf="alumno.controls.apellido.hasError('required')">
+                            <mat-error *ngIf="entidad.controls.apellido.hasError('required')">
                               El apellido <strong>OBLIGATORIO</strong>
+                            </mat-error>
+                          </mat-form-field><br><br>
+
+                          <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Dirección</mat-label>
+                            <input type="text" matInput formControlName="direccion" [errorStateMatcher]="matcher">
+                            <!-- <mat-error *ngIf="entidad.controls.apellido.hasError('email') && !emailFormControl.hasError('required')">
+                              Please enter a valid email address
+                            </mat-error> -->
+                            <mat-error *ngIf="entidad.controls.direccion.hasError('required')">
+                              La Dirección es <strong>OBLIGATORIA</strong>
+                            </mat-error>
+                          </mat-form-field><br><br>
+
+                          <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Telefono</mat-label>
+                            <input type="text" matInput formControlName="telefono" [errorStateMatcher]="matcher">
+                            <!-- <mat-error *ngIf="entidad.controls.apellido.hasError('email') && !emailFormControl.hasError('required')">
+                              Please enter a valid email address
+                            </mat-error> -->
+                            <mat-error *ngIf="entidad.controls.telefono.hasError('required')">
+                              El numero de Telefono es <strong>OBLIGATORIO</strong>
                             </mat-error>
                           </mat-form-field><br><br>
             
                           <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Documento</mat-label>
-                            <input type="number" matInput formControlName="documento" [errorStateMatcher]="matcher">
+                            <input type="number" matInput formControlName="nro_documento" [errorStateMatcher]="matcher">
                             <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                               Please enter a valid email address
                             </mat-error> -->
-                            <mat-error *ngIf="alumno.controls.documento.hasError('required')">
+                            <mat-error *ngIf="entidad.controls.nro_documento.hasError('required')">
                               El documento es <strong>OBLIGATORIO</strong>
                             </mat-error>
                           </mat-form-field> <br> <br>

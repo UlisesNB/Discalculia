@@ -64,9 +64,13 @@ export class LoginComponent implements OnInit {
         res  => {
           console.log('Respuesta del servidor: ', res);
 
-          this.response = JSON.parse(JSON.stringify(res))
+          this.response = JSON.parse(JSON.stringify(res));
+
+          console.log('Objeto', this.response);
 
           localStorage.setItem('token', this.response.access_token);
+          localStorage.setItem('id_profesor', this.response.user.id);
+
 
           this.router.navigate(['/home']);
         },

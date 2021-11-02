@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm, FormBuilder } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { TestService } from '../../services/test.service';
 
@@ -16,28 +16,126 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./registrar-alumno.component.scss']
 })
 export class RegistrarAlumnoComponent implements OnInit {
+  @ViewChild('AluForm') myNgForm: any;
 
-  alumno = new FormGroup({
-    nombre: new FormControl('', Validators.required),
-    apellido: new FormControl('', Validators.required),
-    documento: new FormControl('', Validators.required),
-  });
+  entidad = {} as FormGroup;
+
+  alumno = {
+    id_entidad: 0
+  };
+
+  aluProfe = {
+    id_alumno: 0,
+    id_profesor: 0  
+  }
+
+  // alumno = new FormGroup({
+  //   tipo_entidad: new FormControl('Al'),
+  //   nombre: new FormControl('', Validators.required),
+  //   apellido: new FormControl('', Validators.required),
+  //   telefono: new FormControl('', Validators.required),
+  //   direccion: new FormControl('', Validators.required),
+  //   id_usuario: new FormControl(),
+  //   nro_documento: new FormControl('', Validators.required),
+  // });
 
   matcher = new MyErrorStateMatcher();
 
-  constructor(private testService: TestService) { }
+  constructor(private testService: TestService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+
+    this.crearFormulario();
+
   }
 
-  registrarAlumno() {
-    this.testService.postAlumno(this.alumno.value)
+  crearFormulario() {
+    this.entidad = this.fb.group({
+      tipo_entidad: ['Al'],
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      telefono: ['', Validators.required],
+      direccion: ['', Validators.required],
+      id_usuario: [],
+      nro_documento: ['', Validators.required],
+    });
+  }
+
+  registrarEntidad() {
+
+    this.testService.postEntidad(this.entidad.value)
     .subscribe(
       res => {
         console.log('Respuesta del servidor: ', res);
-        this.alumno.reset()
+
+        this.recuperarEntidad(this.entidad.controls['nro_documento'].value)
+
+        this.myNgForm.resetForm()
+        this.entidad.reset({
+          tipo_entidad: 'Al'
+        });
       },
       err => console.log(err)
     );
   };
+
+  recuperarEntidad(doc: string) {
+    this.testService.getEntidad(doc)
+    .subscribe(
+      res => {
+        console.log('Entidad: ', res);
+
+        let respuesta: any;
+        respuesta = JSON.parse(JSON.stringify(res))
+        this.alumno.id_entidad = respuesta.id
+
+        this.registrarAlumno(this.alumno)
+
+      }
+    )
+  }
+
+  registrarAlumno(alumno: {}) {
+    this.testService.postAlumno(alumno)
+    .subscribe(
+      res => {
+        console.log('alumno: ', res);
+
+        let respuesta: any;
+        let id: any;
+        respuesta = JSON.parse(JSON.stringify(res));
+        console.log('Respuesta del alumno insertado: ', respuesta);
+        this.aluProfe.id_alumno = respuesta.id;
+
+        id = localStorage.getItem('id_profesor');
+
+        this.recuperarProfesor(id);
+      }
+    );
+  };
+
+  recuperarProfesor(id: number) {
+    this.testService.getProfesor(id)
+    .subscribe(
+      res => {
+        console.log('alumno: ', res);
+
+        let respuesta: any;
+        respuesta = JSON.parse(JSON.stringify(res));
+
+        this.aluProfe.id_profesor = respuesta.id
+        this.registarAlumnoProfesor();
+      }
+    );
+  };
+
+  registarAlumnoProfesor() {
+    this.testService.postAluProfe(this.aluProfe)
+    .subscribe(
+      res => {
+        console.log('Resultado final: ', res);
+      }
+    );
+  }
+
 }

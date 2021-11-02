@@ -58,6 +58,26 @@ export class TestService {
     return this.http.post(`${this._url}Alumnos/`, alumno, {'headers': headers});
   };
 
+  postEntidad(entidad: any) {
+    console.log('Objeto alumno que recibira la Api');
+    const headers =  { 'content-type': 'application/json'};
+    return this.http.post(`${this._url}Entidad/`, entidad, {'headers': headers});
+  }
+
+  getEntidad(doc: string) {
+    return this.http.get(`${this._url}Entidad/${doc}`);
+  }
+
+  getProfesor(id: number) {
+    return this.http.get(`${this._url}Profesor/${id}`);
+  }
+
+  postAluProfe(aluProfe: any) {
+    console.log('Objeto alumno que recibira la Api');
+    const headers =  { 'content-type': 'application/json'};
+    return this.http.post(`${this._url}AluProfe/`, aluProfe, {'headers': headers});
+  }
+
 
 
 }
