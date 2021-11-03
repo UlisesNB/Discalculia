@@ -379,7 +379,7 @@ export class TestComponent implements OnInit {
       this.sistNumericoTotal++
     }
 
-    if (this.sistNumFormGroup.controls['elegirMayor_2_10'].value == 10) {
+    if (this.sistNumFormGroup.controls['elegirMayor_2_10'].value == 2) {
       this.sistNumericoTotal++
     }
 
@@ -570,27 +570,27 @@ export class TestComponent implements OnInit {
   };
 
   analizarResultadosEstimTamanho() {
-    if (this.estimacion.controls['controlEjercicioUno'].value == 18) {
+    if (this.estimacion.controls['controlEjercicioUno'].value == 4) {
       this.estimTamanhoTotal++;
     };
 
-    if (this.estimacion.controls['controlEjercicioDos'].value == 11) {
+    if (this.estimacion.controls['controlEjercicioDos'].value == 6) {
       this.estimTamanhoTotal++;
     };
 
-    if (this.estimacion.controls['controlEjercicioTres'].value == 12) {
+    if (this.estimacion.controls['controlEjercicioTres'].value == 5) {
       this.estimTamanhoTotal++;
     };
 
-    if (this.estimacion.controls['controlEjercicioCuatro'].value == 3) {
+    if (this.estimacion.controls['controlEjercicioCuatro'].value == 4) {
       this.estimTamanhoTotal++;
     };
 
-    if (this.estimacion.controls['controlEjercicioCinco'].value == 3) {
+    if (this.estimacion.controls['controlEjercicioCinco'].value == 5) {
       this.estimTamanhoTotal++;
     };
 
-    if (this.estimacion.controls['controlEjercicioSeis'].value == 4) {
+    if (this.estimacion.controls['controlEjercicioSeis'].value == 2) {
       this.estimTamanhoTotal++;
     };
 
@@ -742,7 +742,9 @@ export class TestComponent implements OnInit {
     this.operacionesTotal = 0;
     this.estimTamanhoTotal = 0;
 
-    this.router.navigate(['/home']);
+    this.isLinear = true;
+
+    this.router.navigate(['/test']);
 
 
   };

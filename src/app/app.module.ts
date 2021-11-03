@@ -33,6 +33,7 @@ import {ObserversModule} from '@angular/cdk/observers';
 import {CdkStepperModule} from '@angular/cdk/stepper';
 
 import { AuthGuard } from './auth.guard';
+import { ListarAlumnoComponent } from './pages/listar-alumno/listar-alumno.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AuthGuard } from './auth.guard';
     HomeComponent,
     ResultadosComponent,
     ResultadosDetallesComponent,
-    RegistrarAlumnoComponent
+    RegistrarAlumnoComponent,
+    ListarAlumnoComponent,
   ],
   imports: [
     BrowserModule,

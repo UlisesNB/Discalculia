@@ -11,6 +11,7 @@ import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { ResultadosDetallesComponent } from './pages/resultados-detalles/resultados-detalles.component';
 import { RegistrarAlumnoComponent } from './pages/registrar-alumno/registrar-alumno.component';
 import { LoginComponent } from './auth/login/login.component';
+import { ListarAlumnoComponent } from './pages/listar-alumno/listar-alumno.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +21,8 @@ const routes: Routes = [
   {path: 'detalles/:id', component: ResultadosDetallesComponent},
   {path: 'registrar-alumno', component: RegistrarAlumnoComponent, canActivate: [AuthGuard]},
   {path: 'home', component: HomeComponent},
+  {path: 'listaAlumnos', component: ListarAlumnoComponent},
+
 
 
 

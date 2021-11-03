@@ -78,6 +78,11 @@ export class TestService {
     return this.http.post(`${this._url}AluProfe/`, aluProfe, {'headers': headers});
   }
 
+  getAlumnos() {
+    return this.http.get(`${this._url}Alumnos/`);
+
+  }
+
 
 
 }
