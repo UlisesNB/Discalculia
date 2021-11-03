@@ -650,7 +650,6 @@ export class TestComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.items, event.previousIndex, event.currentIndex);
-    console.log(this.items[0].orden);
 
   };
 

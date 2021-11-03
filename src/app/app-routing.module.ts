@@ -20,12 +20,7 @@ const routes: Routes = [
   {path: 'resultados', component: ResultadosComponent, canActivate: [AuthGuard]},
   {path: 'detalles/:id', component: ResultadosDetallesComponent},
   {path: 'registrar-alumno', component: RegistrarAlumnoComponent, canActivate: [AuthGuard]},
-  {path: 'home', component: HomeComponent},
   {path: 'listaAlumnos', component: ListarAlumnoComponent},
-
-
-
-
 ];
 
 @NgModule({

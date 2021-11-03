@@ -174,31 +174,33 @@ mat-checkbox{
 
 
 .example-list {
-    width: 300px;
+    width: 100%;
     max-width: 100%;
     border: solid 1px #ccc;
     min-height: 60px;
-    display: block;
+    display: flex;
+    flex-direction: row;
     background: white;
     border-radius: 4px;
     overflow: hidden;
-    justify-content: center;
   }
   
   .example-box {
     padding: 20px 10px;
-    border-bottom: solid 1px #ccc;
+    border-right: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
     background: white;
     font-size: 14px;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-content: center;
   }
-  
   .cdk-drag-preview {
     box-sizing: border-box;
     border-radius: 4px;
@@ -243,4 +245,20 @@ mat-checkbox{
     width: 20px;  /*double of your required circle radius*/
     left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
     top: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+  }
+
+  .grupos-opciones {
+    border: 1px solid black;
+    border-radius: 15px;
+  }
+
+  .opciones-imagenes {
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+  }
+
+  mat-radio-button {
+      margin: 10px;
+      
   }

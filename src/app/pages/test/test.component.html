@@ -379,14 +379,14 @@
                             <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label"
                                 formControlName="elegirMayor_2_10">
 
-                                <div class="opciones-padre">
+                                <div class="opciones-padre grupos-opciones">
                                     <div>
 
-                                        <img src="../../../assets/2-animado.gif" alt=""><br>
+                                        <img class="opciones-imagenes" src="../../../assets/2-animado.gif" alt=""><br>
                                         <mat-radio-button value="2"></mat-radio-button>
                                     </div>
                                     <div>
-                                        <img src="../../../assets/1.gif" alt=""> <br>
+                                        <img class="opciones-imagenes" src="../../../assets/1.gif" alt=""> <br>
                                         <mat-radio-button value="1"></mat-radio-button>
                                     </div>
                                 </div>
@@ -395,13 +395,13 @@
                             <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label"
                                 formControlName="elegirMayor_2_6">
 
-                                <div class="opciones-padre">
+                                <div class="opciones-padre grupos-opciones">
                                     <div>
-                                        <img src="../../../assets/2-animado.gif" alt=""><br>
+                                        <img class="opciones-imagenes" src="../../../assets/2-animado.gif" alt=""><br>
                                         <mat-radio-button value="2"></mat-radio-button>
                                     </div>
                                     <div>
-                                        <img src="../../../assets/6-animado.gif" alt=""><br>
+                                        <img class="opciones-imagenes" src="../../../assets/6-animado.gif" alt=""><br>
                                         <mat-radio-button value="6"></mat-radio-button>
                                     </div>
                                 </div>
@@ -412,13 +412,13 @@
                             <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label"
                                 formControlName="elegirMayor_4_5">
 
-                                <div class="opciones-padre">
+                                <div class="opciones-padre grupos-opciones">
                                     <div>
-                                        <img src="../../../assets/4-animado2.gif" alt=""><br>
+                                        <img class="opciones-imagenes" src="../../../assets/4-animado2.gif" alt=""><br>
                                         <mat-radio-button value="4"></mat-radio-button>
                                     </div>
                                     <div>
-                                        <img src="../../../assets/5-animado.gif" alt=""><br>
+                                        <img class="opciones-imagenes" src="../../../assets/5-animado.gif" alt=""><br>
                                         <mat-radio-button value="5"></mat-radio-button>
                                     </div>
                                 </div>
@@ -432,13 +432,13 @@
                             <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label"
                                 formControlName="elegirMayor_8_7">
 
-                                <div class="opciones-padre">
+                                <div class="opciones-padre grupos-opciones">
                                     <div>
-                                        <img src="../../../assets/8.gif" alt=""><br>
+                                        <img class="opciones-imagenes" src="../../../assets/8.gif" alt=""><br>
                                         <mat-radio-button value="8"></mat-radio-button>
                                     </div>
                                     <div>
-                                        <img src="../../../assets/7animado.gif" alt=""><br>
+                                        <img class="opciones-imagenes" src="../../../assets/7animado.gif" alt=""><br>
                                         <mat-radio-button value="7"></mat-radio-button>
                                     </div>
                                 </div>
@@ -448,14 +448,14 @@
                             <mat-radio-group class="options-container" aria-labelledby="example-radio-group-label"
                                 formControlName="elegirMayor_9_3">
 
-                                <div class="opciones-padre">
+                                <div class="opciones-padre grupos-opciones">
                                     <div>
-                                        <img src="../../../assets/Day 36 - 36daysoftype, 36days_9 - 36daysoftype _ ello.gif"
+                                        <img class="opciones-imagenes" src="../../../assets/Day 36 - 36daysoftype, 36days_9 - 36daysoftype _ ello.gif"
                                             alt=""><br>
                                         <mat-radio-button value="9"></mat-radio-button>
                                     </div>
                                     <div>
-                                        <img src="../../../assets/3.gif" alt=""><br>
+                                        <img class="opciones-imagenes" src="../../../assets/3.gif" alt=""><br>
                                         <mat-radio-button value="3"></mat-radio-button>
                                     </div>
                                 </div>
@@ -593,7 +593,7 @@
             <div class="preguntas">
                 <div class="pregunta-i">
                     <label class="titulo">Ordena las estrellas de menor a mayor</label>
-                    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)"
+                    <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)"
                         aria-labelledby="example-radio-group-label">
                         <div class="example-box" *ngFor="let movie of items" cdkDrag>
                             <!-- <div class="example-custom-placeholder" *cdkDragPlaceholder></div> -->
