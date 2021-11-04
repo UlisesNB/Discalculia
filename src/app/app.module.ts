@@ -12,7 +12,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { LoginComponent } from './auth/login/login.component';
 import { TestComponent } from './pages/test/test.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { HomeComponent } from './pages/home/home.component';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { ResultadosDetallesComponent } from './pages/resultados-detalles/resultados-detalles.component';
 import { RegistrarAlumnoComponent } from './pages/registrar-alumno/registrar-alumno.component';
@@ -41,7 +40,6 @@ import { ListarAlumnoComponent } from './pages/listar-alumno/listar-alumno.compo
     LoginComponent,
     TestComponent,
     NavbarComponent,
-    HomeComponent,
     ResultadosComponent,
     ResultadosDetallesComponent,
     RegistrarAlumnoComponent,
