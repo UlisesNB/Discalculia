@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('id_profesor', this.response.user.id);
 
 
-          this.router.navigate(['/home']);
+          this.router.navigate(['/test']);
         },
         err => console.log(err)
       )
