@@ -533,11 +533,11 @@ export class TestComponent implements OnInit {
       this.operacionesTotal++
     };
 
-    if (this.operaciones.controls['controlPelotas'].value == 9) {
+    if (this.operaciones.controls['controlPelotas'].value == 1) {
       this.operacionesTotal++
     };
 
-    if (this.operaciones.controls['controlFlores'].value == 6) {
+    if (this.operaciones.controls['controlFlores'].value == 1) {
       this.operacionesTotal++
     };
 
