@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 })
 export class TestComponent implements OnInit {
 
-  isLinear = false;
+  isLinear = true;
   mostrarStep: boolean = true;
 
   variable: boolean = false;
