@@ -2,9 +2,13 @@
   <div class="contenedor">
     <div *ngFor="let resultado of resultados">
       <span class="titulos">Nombre del alumno: <span class="nombre"> {{resultado.nombre_alumno}} </span> </span><br>
+      <span class="titulos">
+        Indicador General: <span>{{resultado.indicador}}</span>
+      </span><br>
+      <span class="titulos">
+        Observación General: <span> {{resultado.observacion}} </span>
+      </span><br><br>
       <span class="titulos">Perfil Detallado</span> <br> <br>
-      <span>{{resultado.indicador}}</span><br>
-      <span> {{resultado.observacion}} </span><br><br>
       <table class="table table-striped">
         <thead>
           <tr>
