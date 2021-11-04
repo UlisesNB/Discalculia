@@ -742,10 +742,7 @@ export class TestComponent implements OnInit {
     this.estimTamanhoTotal = 0;
 
     this.isLinear = true;
-
-    this.router.navigate(['/test']);
-
-
+    window.location.reload()
   };
 
   aplicarDiagnosticoGeneral(resultadoTest: any, idAlumno: number) {
