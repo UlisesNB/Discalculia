@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class TestService {
 
-  private _url: string = 'http://127.0.0.1:8000/api/';
+  private _url: string = `${environment.url_path}`;
 
   constructor(private http: HttpClient) {
     console.log('Se conecta al service');

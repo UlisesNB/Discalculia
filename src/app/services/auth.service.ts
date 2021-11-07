@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router'
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Router } from '@angular/router'
 })
 export class AuthService {
 
-  private URL: string = 'http://127.0.0.1:8000/api/';
+  private URL: string = `${environment.url_path}`;
 
   constructor(private http: HttpClient, private router: Router) { }
 
