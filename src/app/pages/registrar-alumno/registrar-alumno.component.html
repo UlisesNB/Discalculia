@@ -33,24 +33,14 @@
 
                           <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Dirección</mat-label>
-                            <input type="text" matInput formControlName="direccion" [errorStateMatcher]="matcher">
-                            <!-- <mat-error *ngIf="entidad.controls.apellido.hasError('email') && !emailFormControl.hasError('required')">
-                              Please enter a valid email address
-                            </mat-error> -->
-                            <mat-error *ngIf="entidad.controls.direccion.hasError('required')">
-                              La Dirección es <strong>OBLIGATORIA</strong>
-                            </mat-error>
+                            <input type="text" matInput formControlName="direccion">
+
                           </mat-form-field><br><br>
 
                           <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Telefono</mat-label>
-                            <input type="text" matInput formControlName="telefono" [errorStateMatcher]="matcher">
-                            <!-- <mat-error *ngIf="entidad.controls.apellido.hasError('email') && !emailFormControl.hasError('required')">
-                              Please enter a valid email address
-                            </mat-error> -->
-                            <mat-error *ngIf="entidad.controls.telefono.hasError('required')">
-                              El numero de Telefono es <strong>OBLIGATORIO</strong>
-                            </mat-error>
+                            <input type="text" matInput formControlName="telefono" >
+    
                           </mat-form-field><br><br>
             
                           <mat-form-field class="example-full-width" appearance="outline">
