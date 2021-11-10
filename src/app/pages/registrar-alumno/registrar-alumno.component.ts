@@ -43,8 +43,8 @@ export class RegistrarAlumnoComponent implements OnInit {
       tipo_entidad: ['Al'],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
-      telefono: ['', Validators],
-      direccion: ['', Validators],
+      telefono: [''],
+      direccion: [''],
       id_usuario: [],
       nro_documento: ['', Validators.required],
     });
