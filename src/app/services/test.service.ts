@@ -41,16 +41,17 @@ export class TestService {
     return this.http.post(`${this._url}ResultadoTest/`, resultadoTest, {'headers': headers});
   };
 
-  putResultadoTest(resultadoTest: any, idAlumno: number) {
-    console.log('Lo que recibira la API para el PUT: ', resultadoTest );
-    const headers =  { 'content-type': 'application/json'}  
-    return this.http.put(`${this._url}ResultadoTest/${idAlumno}`, resultadoTest, {'headers': headers});
-  };
-
+  
   postResultadoItem(item: any) {
     console.log('Lo que recibira la API: ', item );
     const headers =  { 'content-type': 'application/json'}  
     return this.http.post(`${this._url}ResultadoItemList/`, item, {'headers': headers});
+  };
+  
+  putResultadoTest(resultadoTest: any, idAlumno: number) {
+    console.log('Lo que recibira la API para el PUT: ', resultadoTest );
+    const headers =  { 'content-type': 'application/json'}  
+    return this.http.put(`${this._url}ResultadoTest/${idAlumno}`, resultadoTest, {'headers': headers});
   };
 
   postAlumno(alumno: any) {

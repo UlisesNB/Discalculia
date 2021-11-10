@@ -715,9 +715,7 @@ export class TestComponent implements OnInit {
     this.analizarResultadosOperaciones();
     this.analizarResultadosEstimTamanho();
 
-    await this.guardarResultadosItem();
-    console.log('2');
-    this.aplicarDiagnosticoGeneral(this.resultadoTest, this.resultadoTest.id_alumno);
+    this.guardarResultadosItem();
     this.resetForm();
   };
 
@@ -740,20 +738,20 @@ export class TestComponent implements OnInit {
     // window.location.reload()
   };
 
-  async guardarResultadosItem() {
+   guardarResultadosItem() {
+    console.log('prepara el item');
     this.testService.postResultadoItem(this.arrayTest)
-    .subscribe(
-      res => {
-        console.log('Se envió correctamente el item: ', res);
-      },
-      err => console.log(err)
-    );
+      .subscribe(
+        res => {
+          console.log('Se envió correctamente el item: ', res);
+          this.aplicarDiagnosticoGeneral(this.resultadoTest, this.resultadoTest.id_alumno);
+
+        },
+        err => console.log(err)
+      );
   }
 
-
-
-
-  aplicarDiagnosticoGeneral(resultadoTest: any, idAlumno: number) {
+   aplicarDiagnosticoGeneral(resultadoTest: any, idAlumno: number) {
     console.log('3');
     this.testService.putResultadoTest(resultadoTest, idAlumno)
       .subscribe(
