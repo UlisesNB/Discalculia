@@ -12,9 +12,9 @@
                     <th scope="col">Direccion</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let resultado of resultados">
+            <tbody *ngFor="let resultado of resultados; index as i">
                 <tr>
-                    <th scope="row">{{resultado.id}}</th>
+                    <th scope="row">{{i+1}}</th>
                     <td> {{resultado.id_entidad.nombre}} {{resultado.id_entidad.apellido}} </td>
                     <td> {{resultado.id_entidad.nro_documento}} </td>
                     <td> {{resultado.id_entidad.telefono}} </td>

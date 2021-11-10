@@ -15,7 +15,8 @@
           <tr>
             <th scope="col">Area</th>
             <th scope="col">Puntaje Obtenido</th>
-            <th scope="col">Puntaje Esperado</th>
+            <th scope="col">Puntaje Minimo Esperado</th>
+            <th scope="col">Puntaje Optimo</th>
             <th scope="col">Indicador</th>
             <th scope="col">Observacion</th>
           </tr>
@@ -24,6 +25,7 @@
           <tr>
             <td> Contar </td>
             <td> {{ resultado.c_pobtenido}} </td>
+            <td>{{resultado.c_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.c_pesperado}}</td>
             <td> {{ resultado.c_indicador }}</td>
             <td> {{ resultado.c_observacion }} </td>
@@ -32,6 +34,7 @@
           <tr>
             <td> Enumerar </td>
             <td> {{ resultado.n_pobtenido}} </td>
+            <td>{{resultado.n_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.n_pesperado}}</td>
             <td> {{ resultado.n_indicador }}</td>
             <td> {{ resultado.n_observacion }} </td>
@@ -40,6 +43,7 @@
           <tr>
             <td> Sistema Numericos </td>
             <td> {{ resultado.sn_pobtenido}} </td>
+            <td>{{resultado.sn_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.sn_pesperado}}</td>
             <td> {{ resultado.sn_indicador }}</td>
             <td> {{ resultado.sn_observacion }} </td>
@@ -48,6 +52,7 @@
           <tr>
             <td> Operaciones Logicas </td>
             <td> {{ resultado.opl_pobtenido}} </td>
+            <td>{{resultado.opl_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.opl_pesperado}}</td>
             <td> {{ resultado.opl_indicador }}</td>
             <td> {{ resultado.opl_observacion }} </td>
@@ -56,6 +61,7 @@
           <tr>
             <td> Operaciones </td>
             <td> {{ resultado.op_pobtenido}} </td>
+            <td>{{resultado.op_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.op_pesperado}}</td>
             <td> {{ resultado.op_indicador }}</td>
             <td> {{ resultado.op_observacion }} </td>
@@ -64,6 +70,7 @@
           <tr>
             <td> Estimacion de Tamaños </td>
             <td> {{ resultado.et_pobtenido}} </td>
+            <td>{{resultado.et_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.et_pesperado}}</td>
             <td> {{ resultado.et_indicador }}</td>
             <td> {{ resultado.et_observacion }} </td>

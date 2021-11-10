@@ -707,7 +707,7 @@ export class TestComponent implements OnInit {
 
   };
 
-  calcularResultados() {
+   async calcularResultados() {
     this.analizarResultadosContar();
     this.analizarResultadosEnumerar();
     this.analizarResultadossitemasNumericos();
@@ -715,13 +715,8 @@ export class TestComponent implements OnInit {
     this.analizarResultadosOperaciones();
     this.analizarResultadosEstimTamanho();
 
-    this.testService.postResultadoItem(this.arrayTest)
-    .subscribe(
-      res => {
-        console.log('Se envió correctamente el item: ', res);
-      },
-      err => console.log(err)
-    );
+    await this.guardarResultadosItem();
+    console.log('2');
     this.aplicarDiagnosticoGeneral(this.resultadoTest, this.resultadoTest.id_alumno);
     this.resetForm();
   };
@@ -742,10 +737,24 @@ export class TestComponent implements OnInit {
     this.estimTamanhoTotal = 0;
 
     this.isLinear = true;
-    window.location.reload()
+    // window.location.reload()
   };
 
+  async guardarResultadosItem() {
+    this.testService.postResultadoItem(this.arrayTest)
+    .subscribe(
+      res => {
+        console.log('Se envió correctamente el item: ', res);
+      },
+      err => console.log(err)
+    );
+  }
+
+
+
+
   aplicarDiagnosticoGeneral(resultadoTest: any, idAlumno: number) {
+    console.log('3');
     this.testService.putResultadoTest(resultadoTest, idAlumno)
       .subscribe(
         res => {
