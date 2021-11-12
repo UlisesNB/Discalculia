@@ -4,19 +4,19 @@
       <span class="titulos">Nombre del alumno: <span class="informacion"> {{resultado.nombre_alumno}} </span> </span><br>
       <span class="titulos">Nroº de Documento: <span class="informacion"> {{resultado.nro_documento}} </span> </span><br>
       <span class="titulos">
-        Indicador General: <span class="informacion">{{resultado.indicador}}</span>
+        Indicador general: <span class="informacion">{{resultado.indicador}}</span>
       </span><br>
       <span class="titulos">
-        Observación General: <span class="informacion"> {{resultado.observacion}} </span>
+        Observación general: <span class="informacion"> {{resultado.observacion}} </span>
       </span><br><br>
-      <span class="titulos">Perfil Detallado</span> <br> <br>
+      <span class="titulos">Perfil detallado</span> <br> <br>
       <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">Área</th>
-            <th scope="col">Puntaje Obtenido</th>
-            <th scope="col">Puntaje Minimo Esperado</th>
-            <th scope="col">Puntaje Óptimo</th>
+            <th scope="col">Puntaje obtenido</th>
+            <th scope="col">Puntaje minimo esperado</th>
+            <th scope="col">Puntaje óptimo</th>
             <th scope="col">Indicador</th>
             <th scope="col">Observación</th>
           </tr>
@@ -41,7 +41,7 @@
           </tr>
 
           <tr>
-            <td> Sistema Númericos </td>
+            <td> Sistema númericos </td>
             <td> {{ resultado.sn_pobtenido}} </td>
             <td>{{resultado.sn_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.sn_pesperado}}</td>
@@ -50,7 +50,7 @@
           </tr>
 
           <tr>
-            <td> Operaciones Lógicas </td>
+            <td> Operaciones lógicas </td>
             <td> {{ resultado.opl_pobtenido}} </td>
             <td>{{resultado.opl_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.opl_pesperado}}</td>
@@ -68,7 +68,7 @@
           </tr>
 
           <tr>
-            <td> Estimación de Tamaños </td>
+            <td> Estimación de tamaños </td>
             <td> {{ resultado.et_pobtenido}} </td>
             <td>{{resultado.et_pesperado * 0.6 | number:'1.0-0'}}</td>
             <td>{{resultado.et_pesperado}}</td>
